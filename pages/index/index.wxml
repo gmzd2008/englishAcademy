@@ -1,0 +1,27 @@
+<!--pages/index/index.wxml-->
+<view class="header">
+  <icon class="search" type="search" size="28" color='#fff'></icon>
+  <navigator class="header-search" open-type="navigate" url="/pages/search/search">
+    搜索你想看的课程哦
+  </navigator>
+</view>
+<swiper-cmp imgs="{{swiper}}"></swiper-cmp>
+<!-- <image src="/images/vue.png" mode="widthFix" style="width: 100%"></image> -->
+<view class="nav-title">
+  <view class="border-title">最新课程</view>
+  <navigator class="all-lesson" open-type='switchTab' url="/pages/lesson/lesson">
+    <text>全部课程</text>
+    <image src="/images/arrow.png" style="width:7px;height:13px;"></image>
+  </navigator>
+</view>
+<view class="container">
+  <block wx:for="{{lesson}}" wx:key="id">
+    <lesson-cmp item="{{item}}" bindmyEvent="onMyEvent"></lesson-cmp>
+    <!-- <view class="lesson-item">
+      <image src="{{item.poster}}" mode="widthFix"></image>
+      <text>{{item.title}}</text>
+      <text>{{item.price}}</text>
+      <view>星级</view>
+    </view> -->
+  </block>
+</view>

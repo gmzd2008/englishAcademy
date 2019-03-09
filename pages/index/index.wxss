@@ -1,0 +1,47 @@
+/* pages/index/index.wxss */
+/* 搜索框 */
+.header {
+  width:100%;
+  height: 90rpx;
+  padding: 6rpx 10rpx;
+  display: flex;
+  justify-content: flex-start;
+  align-items:center;
+  background:#F0151D;
+  text-align:center;
+}
+.header .search{
+  padding:0 20rpx;
+
+}
+.header-search{
+  width:600rpx;
+  height: 78rpx;
+  line-height: 78rpx;
+  border-radius: 39rpx;
+  border: 1px soid #D8151F;
+  background: #D8151F;
+  color: #fff;
+  font-size:24rpx;
+}
+/* 标题头*/
+.nav-title {
+  display: flex;
+  justify-content: space-between;
+  margin: 20rpx;
+}
+.all-lesson {
+  height: 16px;
+  line-height: 16px;
+  font-size: 16px;
+  color: #ccc;
+}
+.all-lesson text{
+  padding: 0 10rpx;
+}
+.container{
+  display: flex;
+  flex-flow: row wrap;
+  box-sizing: border-box;
+  justify-content: center;
+}
