@@ -1,0 +1,38 @@
+.login{
+width: 716rpx;
+
+}
+.login input{
+  width: 97%;
+  height: 90rpx;
+  font-size:28rpx;
+  color: #eee;
+
+  background: #eee;
+  margin-top: 20rpx;
+  padding-left: 20rpx;
+
+}
+.login button{
+  margin-top: 30rpx;
+  background: #F76968;
+  color: #fff;
+}
+.tips{
+  display: flex;
+  justify-content:space-between;
+  font-size: 28rpx;
+  margin-top: 20rpx;
+
+}
+.tips .zuce{
+  width:170rpx;
+  height: 46rpx;
+  line-height: 46rpx;
+  
+}
+.wpsd{
+  width: 114rpx;
+  height: 46rpx;
+  line-height: 46rpx;
+}
