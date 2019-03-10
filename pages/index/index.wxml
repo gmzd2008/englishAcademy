@@ -1,4 +1,4 @@
-<!--pages/index/index.wxml-->
+<!-- pages/index/index.wxml -->
 <view class="header">
   <icon class="search" type="search" size="28" color='#fff'></icon>
   <navigator class="header-search" open-type="navigate" url="/pages/search/search">
@@ -6,11 +6,30 @@
   </navigator>
 </view>
 <swiper-cmp imgs="{{swiper}}"></swiper-cmp>
-<!-- <image src="/images/vue.png" mode="widthFix" style="width: 100%"></image> -->
+<view class="container new-user">
+  <image class="" src="/images/star.png" mode="widthFix" lazy-load="false" binderror="" bindload=""></image>
+  <view>新人注册专享35元大礼包，你来我就送！</view>
+</view>
+<view class="nav-title">
+  <view class="border-title">精品课程</view>
+  <navigator class="all-lesson" open-type='switchTab' url="/pages/lesson/lesson">
+    <text>更多课程</text>
+    <image src="/images/arrow.png" style="width:7px;height:13px;"></image>
+  </navigator>
+</view>
+<view class="container">
+  <view class="jingpin-l" hover-class="none" hover-stop-propagation="false">
+    <image class="" src="/images/less-1.jpg" mode="widthFix" lazy-load="false" binderror="" bindload=""></image>
+  </view>
+  <view class="jingpin-r" hover-class="none" hover-stop-propagation="false">
+    <image class="" src="/images/less-3.jpg" mode="widthFix" lazy-load="false" binderror="" bindload=""></image>
+    <image class="" src="/images/less-4.jpg" mode="widthFix" lazy-load="false" binderror="" bindload=""></image>
+  </view>
+</view>
 <view class="nav-title">
   <view class="border-title">最新课程</view>
   <navigator class="all-lesson" open-type='switchTab' url="/pages/lesson/lesson">
-    <text>全部课程</text>
+    <text>更多课程</text>
     <image src="/images/arrow.png" style="width:7px;height:13px;"></image>
   </navigator>
 </view>
