@@ -10,7 +10,7 @@
     border-radius: 5px;
     border: 1px solid #ddd;
     overflow: hidden;
-    box-shadow: 5px 5px 5px #ddd;
+    box-shadow: 5px 10px 5px #ddd;
     box-sizing: border-box;
 }
 
