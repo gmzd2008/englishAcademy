@@ -39,5 +39,4 @@
     flex-flow: row wrap;
     box-sizing: border-box;
     justify-content: center;
-    align-items: center;
 }

@@ -1,1 +1,35 @@
 /* pages/lesson/lesson.wxss */
+
+.scroll-wrap {
+    height: 90rpx;
+    width: 670rpx;
+    margin-left: 40rpx;
+    margin-top: 21rpx;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.scroll-wrap-item {
+    display: inline-block;
+    padding:8rpx 8rpx 8rpx 20rpx;
+}
+
+.scroll-wrap-item text {
+    height: 48rpx;
+    line-height: 48rpx;
+    font-size: 28rpx;
+    color: #666;
+    border-radius: 10rpx;
+    background-color: #f3f3f5;
+}
+
+.scroll-wrap-item:nth-child(1) {
+    padding-left: 0;
+}
+.scroll-wrap-item.active{
+    border-bottom: 1px solid #e07074;
+}
+.scroll-wrap-item.active text {
+    color: #e07074;
+    background-color: #f9ebe5;
+}

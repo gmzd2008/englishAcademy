@@ -58,7 +58,6 @@ Component({
       //计算的高度值
       var viewHeight = 750 / ratio;
       var imgheight = viewHeight;
-      console.log(imgheight);
       var imgheights = this.data.option.imgheights;
       //把每一张图片的对应的高度记录到数组里
       imgheights[e.target.dataset.id] = imgheight;
@@ -67,8 +66,6 @@ Component({
       })
     },
     bindchange: function (e) {
-      console.log(e.detail.current)
-      console.log(this.data.option.current)
       this.setData({ ['option.current']: e.detail.current })
     }
   }

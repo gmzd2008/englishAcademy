@@ -6,8 +6,9 @@
 .new-user {
     justify-content: flex-start;
     padding-left: 34rpx;
-    height: 60rpx;
-    line-height: 60rpx;
+    padding-top:20rpx;
+    height: 80rpx;
+    line-height: 80rpx;
 }
 
 .new-user>image {
@@ -29,12 +30,11 @@
 }
 
 .container .jingpin-r {
-    margin-left: 6rpx;
+    margin-left: 8rpx;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
 }
-
 
 /* 标题头*/
 
@@ -48,7 +48,7 @@
     height: 16px;
     line-height: 16px;
     font-size: 16px;
-    color: #ccc;
+    color: #666;
 }
 
 .all-lesson text {

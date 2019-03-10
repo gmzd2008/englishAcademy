@@ -10,7 +10,7 @@ Page({
    */
   data: {
     swiper: [{
-      src: '/images/banner-1.jpg',
+      src: '/images/banner-2.jpg',
         link: "/"
       },
       {

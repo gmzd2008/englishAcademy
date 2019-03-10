@@ -1,5 +1,6 @@
 /* pages/my/my.wxss */
 .userAvatar{
+  width: 100%;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -21,6 +22,9 @@
 .userNick{
   width: 160rpx;
   margin: 0 auto;
+}
+.kec-list{
+    width: 100%;
 }
 .kec-list > view{
   padding:0 56rpx;
