@@ -1,0 +1,59 @@
+/* components/lesson/index.wxss */
+
+.lesson-item {
+    display: flex;
+    width: 710rpx;
+    margin-right: 10rpx;
+    margin-bottom: 10rpx;
+    padding: 10rpx;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    overflow: hidden;
+    box-shadow: 5px 5px 5px #ddd;
+    box-sizing: border-box;
+}
+
+.lesson-img {
+    width: 100%;
+}
+
+.cnt {
+    padding: 14rpx 30rpx;
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 28rpx;
+}
+
+.cnt .cnt-l {
+    width: 60%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}
+
+.cnt .cnt-l >text {
+    font-size: 32rpx;
+}
+
+.cnt .cnt-l .price {
+    display: flex;
+    justify-content: space-between;
+}
+.ctn .cnt-l .price{
+    display: inline-block;
+}
+.ctn .cnt-l .price:nth-child(2) {
+    color: #ff7715;
+}
+
+.cnt .cnt-r {
+    width: 120rpx;
+    color: #fff;
+    background-color: #ff7715;
+}

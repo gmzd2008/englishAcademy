@@ -1,9 +1,12 @@
 /* pages/lesson/lesson.wxss */
-
+.nav-scroll{
+    margin:0 30rpx;
+    margin-bottom:20rpx;
+    border-bottom: 1px solid #eee;
+}
 .scroll-wrap {
     height: 90rpx;
-    width: 670rpx;
-    margin-left: 40rpx;
+    width: 680rpx;
     margin-top: 21rpx;
     overflow: hidden;
     white-space: nowrap;

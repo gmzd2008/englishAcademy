@@ -8,7 +8,7 @@
 <swiper-cmp imgs="{{swiper}}"></swiper-cmp>
 <view class="container new-user">
   <image class="" src="/images/star.png" mode="widthFix" lazy-load="false" binderror="" bindload=""></image>
-  <view>新人注册专享35元大礼包，你来我就送！</view>
+  <view bindtap="toRegister">新人注册专享35元大礼包，你来我就送！</view>
 </view>
 <view class="nav-title">
   <view class="border-title">精品课程</view>

@@ -5,6 +5,7 @@
 
 .new-user {
     justify-content: flex-start;
+    align-items: center;
     padding-left: 34rpx;
     padding-top:20rpx;
     height: 80rpx;
@@ -26,7 +27,7 @@
 
 .container .jingpin-l>image,
 .container .jingpin-r>image {
-    width: 360rpx;
+    width: 340rpx;
 }
 
 .container .jingpin-r {

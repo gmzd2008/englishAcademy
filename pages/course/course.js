@@ -7,7 +7,6 @@ Page({
     btnIndex:"0"
   },
   changeTab(e){
-    console.log(e);
     let index = e.target.dataset.index;
     this.setData({
       btnIndex:index

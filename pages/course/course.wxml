@@ -9,7 +9,7 @@
       <text class=''>英语演讲技巧</text>
     </view>
     <view class='jianjie'>
-      <image></image>
+      <image src="/images/less-2.jpg" mode='widthFix'></image>
       <view class='jianjieR'>
         <text>张老师</text>
         <view class='rBottom'>
@@ -36,7 +36,7 @@
     <view class="countdown">
       <text class='countdowntxt' style='color:#E51C23'>距离课程开始时间还有</text>
       <view class='xnumber'>
-        <text decode="{{true}}" space="{{true}}">20.&nbsp;&nbsp;&nbsp;</text>
+        <text decode="{{true}}" space="{{true}}">20&nbsp;&nbsp;&nbsp;</text>
         <text decode="{{true}}" space="{{true}}">10:&nbsp;&nbsp;&nbsp;</text>
         <text decode="{{true}}" space="{{true}}">55:&nbsp;&nbsp;&nbsp;</text>
         <text>18</text>

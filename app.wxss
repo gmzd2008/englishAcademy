@@ -35,8 +35,21 @@
 }
 
 .container {
+    margin:0 20rpx;
     display: flex;
     flex-flow: row wrap;
     box-sizing: border-box;
     justify-content: center;
+}
+.no-more{
+    margin:20rpx 0;
+    width:50%;
+    height:50rpx;
+    border-radius: 10rpx;
+    text-align: center;
+    line-height: 50rpx;
+    font-size: 30rpx;
+    font-weight: 500rpx;
+    color:#e07074;
+    background-color: #eee;
 }

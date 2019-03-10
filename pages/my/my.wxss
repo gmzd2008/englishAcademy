@@ -16,18 +16,22 @@
   margin: 0 auto;
 
 }
-.userNick image{
-  width: 20rpx;
-}
 .userNick{
-  width: 160rpx;
+  width: 180rpx;
   margin: 0 auto;
+  display: flex;
+  align-items: center;
 }
+.userNick image{
+    margin-left:30rpx;
+  width: 30rpx;
+}
+
 .kec-list{
     width: 100%;
 }
 .kec-list > view{
-  padding:0 56rpx;
+  padding:0 26rpx;
   display: flex;
    flex-direction: row;
    justify-content: space-between;

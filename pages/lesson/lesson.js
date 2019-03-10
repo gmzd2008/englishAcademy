@@ -2,6 +2,7 @@
 import {
     HTTP
 } from '../../utils/http-promise.js';
+import { cnsub } from '../../utils/tools.js'
 let http = new HTTP();
 Page({
 
@@ -23,19 +24,17 @@ Page({
             name: "语感专题"
         }, {
             id: 4,
-            name: "全部"
-        }, {
-            id: 5,
             name: "英语演讲"
         }, {
-            id: 6,
+            id: 5,
             name: "口才速成"
         }, {
-            id: 7,
+            id: 6,
             name: "语感专题"
         }],
         scrollIndex: "0",
-        lesson: []
+        lesson: [],
+        noMore:false
     },
 
     /**
@@ -55,39 +54,25 @@ Page({
         http.request({
             url: "/allLesson"
         }).then(data => {
+            console.log(data)
+            // data.forEach((item)=>{
+            //     item.title = cnsub(item.title,36);
+            // });
             this.setData({
                 lesson: data
             })
         })
     },
-    /**
-     * 生命周期函数--监听页面初次渲染完成
-     */
-    onReady: function() {
-
+    onMyEvent(e) {
+        console.log(e)
+        let detail = e.detail;
+        // wx.navigateTo({
+        //   url: `/pages/detail/detail?id=${detail.id}&title=${detail.title}`
+        // })
+        wx.navigateTo({
+            url: `/pages/course/course`
+        })
     },
-
-    /**
-     * 生命周期函数--监听页面显示
-     */
-    onShow: function() {
-
-    },
-
-    /**
-     * 生命周期函数--监听页面隐藏
-     */
-    onHide: function() {
-
-    },
-
-    /**
-     * 生命周期函数--监听页面卸载
-     */
-    onUnload: function() {
-
-    },
-
     /**
      * 页面相关事件处理函数--监听用户下拉动作
      */
@@ -99,7 +84,9 @@ Page({
      * 页面上拉触底事件的处理函数
      */
     onReachBottom: function() {
-
+        this.setData({
+            noMore:true
+        })
     },
 
     /**

@@ -1,0 +1,15 @@
+<!--components/lesson/index.wxml-->
+<view class="lesson-item" catchtap="onTap" data-detail="{{item}}">
+  <image class="lesson-img" src="{{item.poster}}" mode="widthFix"></image>
+  <view class="cnt">
+    <view class="cnt-l">
+      <text>{{item.title}}</text>
+      <view class="price">
+        <text>{{item.score}} 人参与</text>
+        <text>{{item.price}}</text>
+      </view>
+    </view>
+    <view class="cnt-r">立即报名</view>
+  </view>
+
+</view>

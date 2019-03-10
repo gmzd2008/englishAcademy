@@ -1,74 +1,77 @@
 .zuce {
-  font-size: 28rpx;
-  display: block;
+    font-size: 28rpx;
+    display: block;
 }
 
 .bg {
-  width: 100%;
-  height: auto;
-  background: #f2f2f2 100%;
-  overflow: hidden;
+    margin: 0;
+    padding: 0 20rpx;
+    width: 100%;
+    box-sizing: border-box;
+    height: auto;
+    background: #f2f2f2 100%;
+    overflow: hidden;
 }
 
 .step {
-  background: #fff;
-  height: 62rpx;
-  line-height: 62rpx;
-  padding: 0 40rpx;
-  margin-bottom: 20rpx;
-  margin-top: 20rpx;
+    background: #fff;
+    height: 62rpx;
+    line-height: 62rpx;
+    padding: 0 40rpx;
+    margin-bottom: 20rpx;
+    margin-top: 20rpx;
 }
 
 .hover {
-  color: red;
+    color: red;
 }
 
 .zuce input {
-  background: #fff;
-  width: 690rpx;
-  height: 62rpx;
-  line-height: 62rpx;
-  padding-left: 20rpx;
+    background: #fff;
+    width: 690rpx;
+    height: 62rpx;
+    line-height: 62rpx;
+    padding-left: 20rpx;
 }
 
 .bg button {
-  margin-top: 30rpx;
-  background: #f76968;
-  color: #fff;
-  width: 710rpx;
-  font-size: 32rpx;
+    margin-top: 30rpx;
+    background: #f76968;
+    color: #fff;
+    width: 710rpx;
+    font-size: 32rpx;
 }
 
 .getCode {
-  font-size: 28rpx;
-  /* display: none;  */
+    font-size: 28rpx;
+    /* display: none;  */
 }
 
-
 .getCode text.message {
-  display: inline-block;
-  font-size: 24rpx;
-  width: 100%;
-  text-align: center;
-  margin-bottom: 20rpx;
+    display: inline-block;
+    font-size: 24rpx;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20rpx;
 }
 
 .getCode input {
-  background: #fff;
-  width: 690rpx;
-  height: 62rpx;
-  line-height: 62rpx;
-  padding-left: 20rpx;
+    background: #fff;
+    width: 690rpx;
+    height: 62rpx;
+    line-height: 62rpx;
+    padding-left: 20rpx;
 }
 
-.setCode{
-  font-size: 28rpx;
+.setCode {
+    font-size: 28rpx;
 }
+
 .setCode input {
-  background: #fff;
-  width: 690rpx;
-  height: 62rpx;
-  line-height: 62rpx;
-  padding-left: 20rpx;
-  margin-top: 20rpx;
+    background: #fff;
+    width: 690rpx;
+    height: 62rpx;
+    line-height: 62rpx;
+    padding-left: 20rpx;
+    margin-top: 20rpx;
 }

@@ -5,7 +5,7 @@
         搜索你想看的课程哦
     </navigator>
 </view>
-<view class="container">
+<view class="nav-scroll">
     <scroll-view class="scroll-wrap" scroll-x scroll-with-animation="{{true}}" >
         <block wx:for="{{lessCats}}" wx:key="{{index}}">
             <view class="scroll-wrap-item {{scrollIndex == index ? 'active':''}}" data-id="{{item.id}}" bindtap="changeCat" >
@@ -18,4 +18,5 @@
     <block wx:for="{{lesson}}" wx:key="id">
         <lesson-cmp item="{{item}}" bindmyEvent="onMyEvent"></lesson-cmp>
     </block>
+    <view class='no-more' wx:if="{{noMore}}">没有更多了！</view>
 </view>
