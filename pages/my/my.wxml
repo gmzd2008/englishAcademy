@@ -55,4 +55,5 @@
       <image src="/images/arrow.png" mode="widthFix"></image>
     </view>
     </view>
+    <button></button>
 </view>

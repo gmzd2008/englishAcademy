@@ -4,9 +4,25 @@ Page({
    * 页面的初始数据
    */
   data: {
-    
+    getcodeShow:false,
+    setCode:false
   },
+  getCode:function(){
+    let show =  this.data.getcodeShow
+    console.log(show)
+     this.setData({
+       getcodeShow: true
 
+     })
+     
+
+  },
+ setCode:function(){
+   this.setData({
+     setCode: true,
+     getcodeShow:false
+   })
+ },
   /**
    * 生命周期函数--监听页面加载
    */

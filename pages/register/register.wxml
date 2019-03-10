@@ -1,3 +1,33 @@
-<view>
-    
+<view class="container bg">
+  <view class="zuce"  wx:if="{{!getcodeShow && !setCode}}" >
+    <view class="step">
+      <text class="hover">1.输入手机号</text>>
+      <text>2.输入验证码</text>>
+      <text>3.设置密码</text>
+    </view>
+    <input type='text' value='' placeholder='请输入您的手机号'></input>
+      <button bindtap='getCode'>获取验证码</button>
+  </view>
+  <view class="getCode"  wx:if="{{getcodeShow}}">
+    <view class="step">
+      <text>1.输入手机号</text>>
+      <text class="hover">2.输入验证码</text>>
+      <text>3.设置密码</text>
+    </view>
+    <text class="message">短信已发送到1177****000056</text>
+    <input type='text' value='' placeholder='请输入验证码'></input>
+     <button bindtap='setCode'>提交验证码</button>
+  </view>
+ <view class="setCode" wx:if="{{setCode}}">
+    <view class="step">
+      <text>1.输入手机号</text>>
+      <text>2.输入验证码</text>>
+      <text class='hover'>3.设置密码</text>
+    </view>
+  <input type='text' value='' placeholder='输入密码'></input>
+    <input type='text' value='' placeholder='确认密码'></input>
+     <button>确认提交</button>
+  </view>
+
+
 </view>

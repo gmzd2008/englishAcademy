@@ -1,0 +1,80 @@
+<view class='container'>
+  <view class='courseBtn' bindtap='changeTab'>
+    <text class='{{btnIndex ? "bgclor":"" }}' data-index="0">课程报名</text>
+    <text class='{{btnIndex ? "":"bgclor"}}' data-index="1">内容详情</text>
+  </view>
+  <view class='cont' wx:if="{{btnIndex=='0'}}">
+    <view class='title'>
+      <text class='line' decode="{{true}}" space="{{true}}">|&nbsp;&nbsp;</text>
+      <text class=''>英语演讲技巧</text>
+    </view>
+    <view class='jianjie'>
+      <image></image>
+      <view class='jianjieR'>
+        <text>张老师</text>
+        <view class='rBottom'>
+          <text>教师简介</text>
+          <text style='margin-left:38rpx;'>系列课程</text>
+        </view>
+      </view>
+    </view>
+    <view class='peopleNumber'>
+      <view class='number'>
+        <text>200</text>
+        <view>小丁名额</view>
+      </view>
+      <view class='number' style="border-right:1px solid #ccc;border-left:1px solid #ccc;">
+        <text>88</text>
+        <view>剩余名额</view>
+      </view>
+      <view class='number'>
+        <text>112</text>
+        <view>已报名额</view>
+      </view>
+
+    </view>
+    <view class="countdown">
+      <text class='countdowntxt' style='color:#E51C23'>距离课程开始时间还有</text>
+      <view class='xnumber'>
+        <text decode="{{true}}" space="{{true}}">20.&nbsp;&nbsp;&nbsp;</text>
+        <text decode="{{true}}" space="{{true}}">10:&nbsp;&nbsp;&nbsp;</text>
+        <text decode="{{true}}" space="{{true}}">55:&nbsp;&nbsp;&nbsp;</text>
+        <text>18</text>
+      </view>
+      <view class='xtxt'>
+        <text decode="{{true}}" space="{{true}}">天&nbsp;&nbsp;&nbsp;&nbsp;</text>
+        <text decode="{{true}}" space="{{true}}">时&nbsp;&nbsp;&nbsp;&nbsp;</text>
+        <text decode="{{true}}" space="{{true}}">分&nbsp;&nbsp;&nbsp;&nbsp;</text>
+        <text>秒</text>
+      </view>
+    </view>
+    <view class='telphone'>
+      <text>联系方式：</text>
+      <text>123456799</text>
+    </view>
+    <view class='adress'>
+      <text>听课地址：</text>
+      <text>北京市宋家庄学豆教育</text>
+    </view>
+    <view class="tips">
+      <text>已有112人占位</text>
+    </view>
+    <view class='zhanweiPeople'>
+      <text class='usrName' style='border-right:1px solid #BBBBBB;'>姓名</text><text class='usephone'>电话</text>
+    </view>
+     <view class='zhanweilist'>
+         <view>
+           <text>张上</text>
+           <text>15678905678</text>
+      </view>
+      <view>
+           <text>张上</text>
+           <text>15678905678</text>
+      </view>
+      </view>
+      <view class='share'>
+      <text class='shareBtn'>分享</text><view class='money'><text>￥</text><text>197</text><text>/立即购买</text></view>
+      </view>
+  </view>
+  <view class='cont' wx:if="{{btnIndex=='1'}}">2</view>
+</view>

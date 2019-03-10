@@ -1,11 +1,18 @@
 Page({
+
   /**
    * 页面的初始数据
    */
   data: {
-    
+    btnIndex:"0"
   },
-
+  changeTab(e){
+    console.log(e);
+    let index = e.target.dataset.index;
+    this.setData({
+      btnIndex:index
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
