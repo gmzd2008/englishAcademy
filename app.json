@@ -1,8 +1,10 @@
 {
   "pages": [
+    "pages/register/register",
+    "pages/login/login",
+    "pages/my/my",
     "pages/index/index",
     "pages/search/search",
-    "pages/my/my",
     "pages/detail/detail",
     "pages/comment/comment",
     "pages/lesson/lesson"

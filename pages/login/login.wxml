@@ -1,0 +1,10 @@
+<view class="container">
+<view class=" login">
+  <input type="text" value="" placeholder='请输入用户名/手机号'></input>
+  <input  type="text"  password="{{true}}" placeholder='请输入密码'></input>
+  <button>登录</button>
+  <view class="tips">
+    <view class="zuce">快速注册</view> <view class="wpsd">忘记密码</view>
+  </view>
+  </view>
+</view>

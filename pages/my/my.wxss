@@ -1,1 +1,52 @@
 /* pages/my/my.wxss */
+.userAvatar{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  padding-bottom: 104rpx;
+  padding-top: 104rpx;
+}
+.line{
+  height: 10rpx;
+  background: #eee
+}
+.userAvatar .userinfo-avatar {
+  width: 160rpx;
+  margin: 0 auto;
+
+}
+.userNick image{
+  width: 20rpx;
+}
+.userNick{
+  width: 160rpx;
+  margin: 0 auto;
+}
+.kec-list > view{
+  padding:0 56rpx;
+  display: flex;
+   flex-direction: row;
+   justify-content: space-between;
+   align-items: center;
+   font-size: 28rpx;
+   color: #101010;
+   border-bottom: 1px solid #eee;
+   padding-top: 40rpx;
+   padding-bottom: 40rpx;
+}
+.kec-list >view > image{
+  width: 20rpx;
+  vertical-align: middle;
+}
+
+.kec-list .list-left image{
+  width: 40rpx;
+  vertical-align: middle;
+}
+.kec-list > view text{
+margin-left: 20rpx;
+font-size: 28rpx;
+}
+.kec-list1{
+padding-bottom: 200rpx;
+}
