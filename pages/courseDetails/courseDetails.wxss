@@ -1,0 +1,69 @@
+.imgeW{
+  width: 100%;
+  height:400rpx;
+}
+.imgeW image{
+  width: 100%;
+  height: 400rpx;
+}
+.tabtitle{
+  width: 730rpx;
+  display: flex;
+  margin: 26rpx auto;
+  justify-content:space-between;
+}
+.tabtitle text{
+  width:133rpx;
+  height:46rpx;
+  border-bottom: 2px solid #fff;
+  font-size: 14px;
+  text-align: center;
+}
+.tabtitle .hover{
+  color: rgb(232, 32, 80);
+  border-bottom: 2px solid rgb(232, 32, 80);
+}
+/* .title1,.title2,.title3{
+  margin-right: 65rpx;
+} */
+
+.desc{
+  font-size: 16px;
+ width: 700rpx;
+ margin: 0 auto;
+padding-bottom: 20rpx;
+
+
+}
+.desc view{
+  margin-top: 14rpx;
+}
+.detsilsimg image{
+  width: 100%;
+  height: 1080rpx;
+}
+.fmoney{
+ width: 750rpx;
+ height: 90rpx;
+ font-size: 16px;
+}
+.buy{
+  float: right;
+  width: 314rpx;
+  height: 90rpx;
+  line-height: 90rpx;
+  background: #FF9800;
+  color: #fff;
+  text-align: center;
+}
+.canyu{
+  color: #888888;
+  width: 166rpx;
+  height: 90rpx;
+  display: inline-block;
+  line-height: 90rpx;
+  font-size: 16px;
+  margin-left: 30rpx;
+
+
+}

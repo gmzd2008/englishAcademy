@@ -76,5 +76,5 @@
       <text class='shareBtn'>分享</text><view class='money'><text>￥</text><text>197</text><text>/立即购买</text></view>
       </view>
   </view>
-  <view class='cont' wx:if="{{btnIndex=='1'}}">2</view>
+  <!-- <view class='cont' wx:if="{{btnIndex=='1'}}">2</view> -->
 </view>
