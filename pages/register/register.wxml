@@ -5,7 +5,7 @@
       <text>2.输入验证码</text>>
       <text>3.设置密码</text>
     </view>
-    <input type='text' value='' placeholder='请输入您的手机号'></input>
+    <input type='text'  bindinput="inputing" placeholder='请输入您的手机号'></input>
       <button bindtap='getCode'>获取验证码</button>
   </view>
   <view class="getCode"  wx:if="{{getcodeShow}}">
@@ -14,8 +14,8 @@
       <text class="hover">2.输入验证码</text>>
       <text>3.设置密码</text>
     </view>
-    <text class="message">短信已发送到1177****000056</text>
-    <input type='text' value='' placeholder='请输入验证码'></input>
+    <text class="message" wx:if="{{mobile.length==11}}">短信已发送到{{subMobile}}({{tempCode}})</text>
+    <input type='text' bindinput="inputRandCode"  placeholder='请输入验证码'></input>
      <button bindtap='setCode'>提交验证码</button>
   </view>
  <view class="setCode" wx:if="{{setCode}}">
@@ -24,9 +24,9 @@
       <text>2.输入验证码</text>>
       <text class='hover'>3.设置密码</text>
     </view>
-  <input type='text' value='' placeholder='输入密码'></input>
-    <input type='text' value='' placeholder='确认密码'></input>
-     <button>确认提交</button>
+  <input type='text' bindinput="inputPwd1" password="{{true}}" placeholder='输入6-20位字母数字组合密码'></input>
+    <input type='text' bindinput="inputPwd2" password="{{true}}" placeholder='确认密码'></input>
+     <button bindtap="sub">确认提交</button>
   </view>
 
 

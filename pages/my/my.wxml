@@ -1,59 +1,58 @@
 <!-- pages/my/my.wxml
 <text>pages/my/my.wxml</text> -->
 <view class="container">
-  <view class="userAvatar">
-    <view class="userinfo-avatar">
-      <open-data type="userAvatarUrl"></open-data>
+    <view class="userAvatar">
+        <view class="userinfo-avatar">
+            <open-data type="userAvatarUrl"></open-data>
+        </view>
+        <view class="userNick">
+            <open-data type="userNickName" class="aick"></open-data>
+            <image src='/images/nav3cur.png' mode="widthFix"></image>
+        </view>
     </view>
-    <view class="userNick">
-      <open-data type="userNickName" class="aick"></open-data>
-      <image src='/images/nav3cur.png' mode="widthFix"></image>
-    </view>
-  </view>
-  <view class="line"></view>
-  <view class="kec-list">
-    <view>
-      <view class="list-left">
-        <image src="/images/share.png" mode="widthFix"></image>
-        <text>已购课程</text>
-      </view>
-      <image src="/images/arrow.png" mode="widthFix"></image>
-    </view>
-    <view>
+    <view class="line"></view>
+    <view class="kec-list">
+        <view>
+            <view class="list-left">
+                <image src="/images/share.png" mode="widthFix"></image>
+                <text>已购课程</text>
+            </view>
+            <image src="/images/arrow.png" mode="widthFix"></image>
+        </view>
+        <view>
 
-      <view class="list-left">
-        <image src="/images/share.png" mode="widthFix"></image>
-        <text>个人资料</text>
-      </view>
+            <view class="list-left">
+                <image src="/images/share.png" mode="widthFix"></image>
+                <text>个人资料</text>
+            </view>
 
-      <image src="/images/arrow.png" mode="widthFix"></image>
-    </view>
-    <view>
+            <image src="/images/arrow.png" mode="widthFix"></image>
+        </view>
+        <!-- <view>
+            <view class="list-left">
+                <image src="/images/share.png" mode="widthFix"></image>
+                <text>我的报名</text>
+            </view>
 
-      <view class="list-left">
-        <image src="/images/share.png" mode="widthFix"></image>
-        <text>我的报名</text>
-      </view>
-
-      <image src="/images/arrow.png" mode="widthFix"></image>
+            <image src="/images/arrow.png" mode="widthFix"></image>
+        </view> -->
     </view>
-  </view>
-<view class="line"></view>
-  <view class="kec-list1 kec-list">
-    <view>
-      <view class="list-left">
-        <image src="/images/share.png" mode="widthFix"></image>
-        <text>推广二维码</text>
-      </view>
-      <image src="/images/arrow.png" mode="widthFix"></image>
-    </view>
-    <view>
-      <view class="list-left">
-        <image src="/images/share.png" mode="widthFix"></image>
-        <text>联系客服</text>
-      </view>
-      <image src="/images/arrow.png" mode="widthFix"></image>
-    </view>
+    <view class="line"></view>
+    <view class="kec-list1 kec-list">
+        <view>
+            <view class="list-left">
+                <image src="/images/share.png" mode="widthFix"></image>
+                <text>推广二维码</text>
+            </view>
+            <image src="/images/arrow.png" mode="widthFix"></image>
+        </view>
+        <view>
+            <view class="list-left">
+                <image src="/images/share.png" mode="widthFix"></image>
+                <text>联系客服</text>
+            </view>
+            <image src="/images/arrow.png" mode="widthFix"></image>
+        </view>
     </view>
     <button></button>
 </view>

@@ -36,7 +36,7 @@ Page({
   },
     toRegister(){
         wx.navigateTo({
-            url: '/pages/register/register',
+            url: '/pages/register/register?act=1',
         })
     },
   /**

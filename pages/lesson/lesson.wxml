@@ -7,8 +7,8 @@
 </view>
 <view class="nav-scroll">
     <scroll-view class="scroll-wrap" scroll-x scroll-with-animation="{{true}}" >
-        <block wx:for="{{lessCats}}" wx:key="{{index}}">
-            <view class="scroll-wrap-item {{scrollIndex == index ? 'active':''}}" data-id="{{item.id}}" bindtap="changeCat" >
+        <block wx:for="{{lessCats}}" wx:key="{{item.id}}">
+            <view class="scroll-wrap-item {{scrollIndex == index ? 'active':''}}" data-index = "{{index}}" data-id="{{item.id}}" bindtap="changeCat" >
                <text>{{item.name}}</text> 
             </view>
         </block>
