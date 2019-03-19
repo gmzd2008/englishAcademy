@@ -44,11 +44,14 @@
 .cnt .cnt-l .price {
     display: flex;
     justify-content: space-between;
+    font-size: 28rpx;
 }
-.ctn .cnt-l .price{
+.cnt .cnt-l .price{
     display: inline-block;
+    color: #666;
 }
-.ctn .cnt-l .price:nth-child(2) {
+.cnt .cnt-l .price text:nth-child(2) {
+    margin-left:50rpx;
     color: #ff7715;
 }
 
@@ -56,4 +59,6 @@
     width: 120rpx;
     color: #fff;
     background-color: #ff7715;
+    text-align: center;
+    border-radius: 3px;
 }

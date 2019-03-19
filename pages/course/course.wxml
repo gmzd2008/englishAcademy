@@ -1,17 +1,17 @@
 <view class='container'>
   <view class='courseBtn' bindtap='changeTab'>
     <text class='{{btnIndex ? "bgclor":"" }}' data-index="0">课程报名</text>
-    <text class='{{btnIndex ? "":"bgclor"}}' data-index="1">内容详情</text>
+    <text class='{{btnIndex ? "":"bgclor"}}' data-index="1" data-id="{{lesson.id}}">内容详情</text>
   </view>
-  <view class='cont' wx:if="{{btnIndex=='0'}}">
+  <view class='cont'>
     <view class='title'>
       <text class='line' decode="{{true}}" space="{{true}}">|&nbsp;&nbsp;</text>
-      <text class=''>英语演讲技巧</text>
+      <text class=''>{{lesson.title}}</text>
     </view>
     <view class='jianjie'>
-      <image src="/images/less-2.jpg" mode='widthFix'></image>
+      <image src="{{lesson.lecturer.picture}}" mode='widthFix'></image>
       <view class='jianjieR'>
-        <text>张老师</text>
+        <text>{{lesson.lecturer.name}}</text>
         <view class='rBottom'>
           <text>教师简介</text>
           <text style='margin-left:38rpx;'>系列课程</text>
@@ -20,15 +20,15 @@
     </view>
     <view class='peopleNumber'>
       <view class='number'>
-        <text>200</text>
+        <text>{{lesson.amount_limit}}</text>
         <view>小丁名额</view>
       </view>
       <view class='number' style="border-right:1px solid #ccc;border-left:1px solid #ccc;">
-        <text>88</text>
+        <text>58</text>
         <view>剩余名额</view>
       </view>
       <view class='number'>
-        <text>112</text>
+        <text>{{lesson.amount_limit-58}}</text>
         <view>已报名额</view>
       </view>
 
@@ -36,10 +36,10 @@
     <view class="countdown">
       <text class='countdowntxt' style='color:#E51C23'>距离课程开始时间还有</text>
       <view class='xnumber'>
-        <text decode="{{true}}" space="{{true}}">20&nbsp;&nbsp;&nbsp;</text>
-        <text decode="{{true}}" space="{{true}}">10:&nbsp;&nbsp;&nbsp;</text>
-        <text decode="{{true}}" space="{{true}}">55:&nbsp;&nbsp;&nbsp;</text>
-        <text>18</text>
+        <text decode="{{true}}" space="{{true}}">{{timer.D}}&nbsp;&nbsp;&nbsp;</text>
+        <text decode="{{true}}" space="{{true}}">{{timer.H}}:&nbsp;&nbsp;&nbsp;</text>
+        <text decode="{{true}}" space="{{true}}">{{timer.M}}:&nbsp;&nbsp;&nbsp;</text>
+        <text>{{timer.S}}</text>
       </view>
       <view class='xtxt'>
         <text decode="{{true}}" space="{{true}}">天&nbsp;&nbsp;&nbsp;&nbsp;</text>
@@ -73,7 +73,7 @@
       </view>
       </view>
       <view class='share'>
-      <text class='shareBtn'>分享</text><view class='money'><text>￥</text><text>197</text><text>/立即购买</text></view>
+      <button class='shareBtn' open-type='share'>分享></button> <view class='money'><text>￥</text><text>197</text><text>/立即购买</text></view>
       </view>
   </view>
   <!-- <view class='cont' wx:if="{{btnIndex=='1'}}">2</view> -->
