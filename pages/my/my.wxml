@@ -7,14 +7,13 @@
         </view>
         <view class="userNick">
             <open-data type="userNickName" class="aick"></open-data>
-            <image src='/images/nav3cur.png' mode="widthFix"></image>
         </view>
     </view>
     <view class="line"></view>
     <view class="kec-list">
         <view>
             <view class="list-left">
-                <image src="/images/share.png" mode="widthFix"></image>
+                <image src="/images/bookmark.png" mode="widthFix"></image>
                 <text>已购课程</text>
             </view>
             <image src="/images/arrow.png" mode="widthFix"></image>
@@ -22,7 +21,7 @@
         <view>
 
             <view class="list-left">
-                <image src="/images/share.png" mode="widthFix"></image>
+                <image src="/images/usermessage.png" mode="widthFix"></image>
                 <text>个人资料</text>
             </view>
 
@@ -48,7 +47,7 @@
         </view>
         <view>
             <view class="list-left">
-                <image src="/images/share.png" mode="widthFix"></image>
+                <image src="/images/talk.png" mode="widthFix"></image>
                 <text>联系客服</text>
             </view>
             <image src="/images/arrow.png" mode="widthFix"></image>

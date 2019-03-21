@@ -22,7 +22,9 @@ Page({
         link: ""
       }
     ],
-    lesson: []
+    lesson: [],
+    lessonL:[],
+    lessonR:[]
   },
   onMyEvent(e) {
     console.log(e)
@@ -45,6 +47,7 @@ Page({
   onLoad: function(options) {
     this.getSwiper();
     this.getLesson();
+    this.getHomeLesson();
   },
   getSwiper() {
     http.request({
@@ -73,6 +76,32 @@ Page({
       });
       this.setData({
         lesson: data
+      })
+    })
+  },
+  getHomeLesson() {
+    http.request({
+      url: '/index.php/api/lesson/getHomeLessons?id=1'
+    }).then(data => {
+      data = data.map((v, i) => {
+        v.poster = host_url + v.poster
+        v.list_img = host_url + v.list_img
+        return v;
+      });
+      this.setData({
+        lessonL: data
+      })
+    })
+    http.request({
+      url: '/index.php/api/lesson/getHomeLessons?id=2'
+    }).then(data => {
+      data = data.map((v, i) => {
+        v.poster = host_url + v.poster
+        v.list_img = host_url + v.list_img
+        return v;
+      });
+      this.setData({
+        lessonR: data
       })
     })
   },

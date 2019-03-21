@@ -6,7 +6,7 @@
 .new-user {
     justify-content: flex-start;
     align-items: center;
-    padding-left: 34rpx;
+    padding-left: 0rpx;
     padding-top:20rpx;
     height: 80rpx;
     line-height: 80rpx;
@@ -18,16 +18,23 @@
 }
 
 .new-user>view {
-    font-size: 24rpx;
+    font-size: 28rpx;
     color: #333;
 }
 
 
 /* 精品课程 */
 
-.container .jingpin-l>image,
+.container .jingpin-l>image{
+  width: 345rpx;
+   margin: auto;
+   border-radius: 10rpx;
+}
 .container .jingpin-r>image {
-    width: 340rpx;
+    width: 345rpx;
+    margin:0 auto;
+    border-radius: 10rpx;
+    padding-bottom: 10rpx;
 }
 
 .container .jingpin-r {
@@ -43,6 +50,7 @@
     display: flex;
     justify-content: space-between;
     margin: 20rpx;
+    padding: 10rpx 5rpx;
 }
 
 .all-lesson {

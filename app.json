@@ -14,7 +14,7 @@
   "window": {
     "navigationBarBackgroundColor": "#F0151D",
     "navigationBarTextStyle": "white",
-    "navigationBarTitleText": "梦想学堂"
+    "navigationBarTitleText": "SpeakUp课程中心"
   },
   "networkTimeout": {
     "request": 20000,
