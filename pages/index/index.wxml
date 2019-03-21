@@ -19,11 +19,11 @@
 </view>
 <view class="container">
   <view class="jingpin-l" hover-class="none" hover-stop-propagation="false">
-    <image class="" src="{{lessonL[0].poster}}" mode="widthFix" lazy-load="false" binderror="" bindload=""></image>
+    <image class="" src="{{lessonL[0].poster}}" data-detail="{{lessonL[0]}}" bindtap='onMyEvent' mode="widthFix" lazy-load="false" binderror="" bindload=""></image>
   </view>
   <view class="jingpin-r" hover-class="none" hover-stop-propagation="false">
-    <image class="jingpin-r-1" src="{{lessonL[0].poster}}" mode="widthFix" lazy-load="false" binderror="" bindload=""></image>
-    <image class="jingpin-r-2" src="{{lessonL[1].poster}}" mode="widthFix" lazy-load="false" binderror="" bindload=""></image>
+    <image class="jingpin-r-1" src="{{lessonR[0].poster}}" data-detail="{{lessonR[0]}}" bindtap='onMyEvent' mode="widthFix" lazy-load="false" binderror="" bindload=""></image>
+    <image class="jingpin-r-2" src="{{lessonR[1].poster}}"  data-detail="{{lessonR[1]}}" bindtap='onMyEvent' mode="widthFix" lazy-load="false" binderror="" bindload=""></image>
   </view>
 </view>
 <view class="nav-title">

@@ -47,10 +47,12 @@
         </view>
         <view>
             <view class="list-left">
+            <button class="kf_btn" open-type="contact"></button>
                 <image src="/images/talk.png" mode="widthFix"></image>
                 <text>联系客服</text>
             </view>
             <image src="/images/arrow.png" mode="widthFix"></image>
+
         </view>
     </view>
     <button></button>

@@ -26,15 +26,23 @@ Page({
     lessonL:[],
     lessonR:[]
   },
+   onMyNav(e) {
+        console.log(e)
+       let detail = e.currentTarget.dataset.detail;
+        wx.navigateTo({
+            url: `/pages/course/course?id=${detail.id}`
+        })
+    },
   onMyEvent(e) {
     console.log(e)
-    let detail = e.detail;
+    // let detail = e.detail;
     // wx.navigateTo({
     //   url: `/pages/detail/detail?id=${detail.id}&title=${detail.title}`
     // })
-    wx.navigateTo({
-      url: `/pages/course/course?id=${detail.id}`
-    })
+      let detail = e.currentTarget.dataset.detail;
+      wx.navigateTo({
+          url: `/pages/course/course?id=${detail.id}`
+      })
   },
     toRegister(){
         wx.navigateTo({

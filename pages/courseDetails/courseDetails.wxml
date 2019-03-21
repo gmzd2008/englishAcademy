@@ -7,7 +7,10 @@
     <text class='title2' class='{{btnIndex == 1 ? "hover": ""}} ' data-index="1">课程目录</text>
     <text class='title3' class='{{btnIndex == 2 ? "hover": "" }}
      data-index="2">课程评论</text>
+     <view class='kefu'>
+     <button class='kf_btn' open-type='contact'></button>
      <text class=' {{btnIndex==3 ? "hover": ""}} ' data-index="3">联系客服</text>
+     </view>
 </view>
 <view  wx:if="{{btnIndex=='0'}}">
 <view class='desc '>
