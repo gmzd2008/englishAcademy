@@ -1,0 +1,12 @@
+<!--components/lesson/index.wxml-->
+<view class="model">
+  <view class='cnt'>
+  <text>新用户面试提醒</text>
+  <view>因为你是新用户，我们需要进行一个简短的面试，才可以更好的为你服务！</view>
+  <view>联系客服，发送你的个人秀吧！</view>
+  <view class='contact'>
+  <button class='wx-btn' catchtap='onTap'>取消</button>
+  <button class='wx-btn' open-type='contact'>确定</button>
+  </view>
+  </view>
+</view>

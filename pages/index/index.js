@@ -7,6 +7,7 @@ import {
   HTTP
 } from "../../utils/http-promise.js";
 let http = new HTTP();
+const app = getApp();
 Page({
 
   /**
@@ -14,7 +15,7 @@ Page({
    */
   data: {
     swiper: [{
-      src: '/images/banner-2.jpg',
+        src: '/images/banner-2.jpg',
         link: "/"
       },
       {
@@ -23,32 +24,32 @@ Page({
       }
     ],
     lesson: [],
-    lessonL:[],
-    lessonR:[]
+    lessonL: [],
+    lessonR: []
   },
-   onMyNav(e) {
-        console.log(e)
-       let detail = e.currentTarget.dataset.detail;
-        wx.navigateTo({
-            url: `/pages/course/course?id=${detail.id}`
-        })
-    },
+  onMyNav(e) {
+    console.log(e)
+    let detail = e.currentTarget.dataset.detail;
+    wx.navigateTo({
+      url: `/pages/course/course?id=${detail.id}`
+    })
+  },
   onMyEvent(e) {
     console.log(e)
     // let detail = e.detail;
     // wx.navigateTo({
     //   url: `/pages/detail/detail?id=${detail.id}&title=${detail.title}`
     // })
-      let detail = e.currentTarget.dataset.detail;
-      wx.navigateTo({
-          url: `/pages/course/course?id=${detail.id}`
-      })
+    let detail = e.currentTarget.dataset.detail;
+    wx.navigateTo({
+      url: `/pages/course/course?id=${detail.id}`
+    })
   },
-    toRegister(){
-        wx.navigateTo({
-            url: '/pages/register/register?act=1',
-        })
-    },
+  toRegister() {
+    wx.navigateTo({
+      url: '/pages/register/register?act=1',
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
@@ -59,19 +60,19 @@ Page({
   },
   getSwiper() {
     http.request({
-      url:'/index.php/api/banner/getbanner'
-      }).then(data=>{
-        // console.log(data);
-        data = data.map((v,i)=>{
-          v.src = host_url+v.ad_code
-          v.link = v.ad_link
-          return v;
-        });
-        console.log(data)
-        this.setData({
-          swiper: data
-        });
+      url: '/index.php/api/banner/getbanner'
+    }).then(data => {
+      // console.log(data);
+      data = data.map((v, i) => {
+        v.src = host_url + v.ad_code
+        v.link = v.ad_link
+        return v;
       });
+      console.log(data)
+      this.setData({
+        swiper: data
+      });
+    });
   },
   getLesson() {
     http.request({

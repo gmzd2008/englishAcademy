@@ -1,7 +1,7 @@
 {
   "usingComponents": {
-    "lesson-cmp": "/components/homeLesson/index",
-    "swiper-cmp": "/components/swiper/index"
+    "swiper-cmp": "/components/swiper/index",
+    "lesson-home": "/components/homeLesson/index"
   },
   "navigationBarTitleText": "首页"
 }

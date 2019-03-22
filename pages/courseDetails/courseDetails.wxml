@@ -4,7 +4,7 @@
   </view>
   <view class='tabtitle' bindtap='changeTab'>
     <text class=' title1' class='{{btnIndex ==0 ? "hover": "" }} ' data-index="0">课程简介</text>
-    <text class='title2' class='{{btnIndex == 1 ? "hover": ""}} ' data-index="1">课程目录</text>
+    <!-- <text class='title2' class='{{btnIndex == 1 ? "hover": ""}} ' data-index="1">课程目录</text> -->
     <text class='title3' class='{{btnIndex == 2 ? "hover": "" }}
      data-index="2">课程评论</text>
      <view class='kefu'>

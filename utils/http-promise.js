@@ -36,8 +36,8 @@ class HTTP {
         } else {
           reject();
           wx.showModal({
-            title: '错误信息',
-            content: '错误信息',
+            title: '接口错误',
+            content: data.msg,
             success(res) {
               if (res.confirm) {
                 console.log('用户点击确定')

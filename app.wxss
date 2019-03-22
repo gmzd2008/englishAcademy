@@ -65,3 +65,10 @@
     color:#e07074;
     background-color: #eee;
 }
+ /* 去除button 默认样式 */
+ .wx-btn,.wx-btn::after{
+     padding:0;
+     background:none;
+     border:none;
+     content:none;
+ }

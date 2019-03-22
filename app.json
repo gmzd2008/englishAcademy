@@ -1,15 +1,17 @@
 {
   "pages": [
-    "pages/index/index",    
+
+    "pages/index/index",
     "pages/course/course",
     "pages/lesson/lesson",
-    "pages/register/register",
     "pages/login/login",
     "pages/my/my",
     "pages/search/search",
     "pages/detail/detail",
     "pages/courseDetails/courseDetails",
+    "pages/register/register",
     "pages/comment/comment"
+
   ],
   "window": {
     "navigationBarBackgroundColor": "#F0151D",

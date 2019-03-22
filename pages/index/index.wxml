@@ -35,7 +35,7 @@
 </view>
 <view class="container">
   <block wx:for="{{lesson}}" wx:key="id">
-    <lesson-cmp item="{{item}}" bindmyEvent="onMyEvent"></lesson-cmp>
+    <lesson-home item="{{item}}" bindmyEvent="onMyEvent"></lesson-home>
     <!-- <view class="lesson-item">
       <image src="{{item.poster}}" mode="widthFix"></image>
       <text>{{item.title}}</text>

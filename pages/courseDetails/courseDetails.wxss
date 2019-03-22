@@ -7,9 +7,10 @@
   height: 400rpx;
 }
 .tabtitle{
-  width: 730rpx;
+  box-sizing: border-box;
+  width: 100%;
   display: flex;
-  margin: 26rpx auto;
+  padding: 26rpx 30rpx;
   justify-content:space-between;
 }
 .tabtitle text{
@@ -24,7 +25,7 @@
   border-bottom: 2px solid rgb(232, 32, 80);
 }
 .kefu{
-  top: -10rpx;
+  top: -4rpx;
 }
 .desc{
   font-size: 16px;

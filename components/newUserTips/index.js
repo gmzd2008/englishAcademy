@@ -23,8 +23,11 @@ Component({
   methods: {
     onTap(e){
       //console.log(e);
-      let detail = e.currentTarget.dataset.detail;
-      this.triggerEvent("myEvent",detail);
+      // let detail = e.currentTarget.dataset.detail;
+      // this.triggerEvent("myEvent",detail);
+      wx.switchTab({
+        url: '/pages/index/index',
+      })
     }
   }
 })
