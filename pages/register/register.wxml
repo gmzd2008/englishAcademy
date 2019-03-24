@@ -30,4 +30,11 @@
   </view>
 
 </view>
+<dialog id='dialog' 
+      title='温馨提示' 
+      content='小程序需要您的授权才能提供更好的服务哦' 
+      confirmText='确认'
+      bind:confirmEvent='confirmEvent'
+      bind:bindGetUserInfo='bindGetUserInfo'>
+</dialog>
 <new-user-tips wx:if="{{tip}}"></new-user-tips>

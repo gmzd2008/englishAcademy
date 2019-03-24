@@ -8,14 +8,14 @@
   <text>取消</text>
 </view>
 <view hidden="{{showLesson}}">
-  <view class="search-box">
+  <!-- <view class="search-box">
     <view class='border-title'>热门搜索</view>
     <view class="search-content">
       <block wx:for="{{hotLesson}}" wx:key="*this">
         <text bindtap='onConfirm' data-value="{{item}}">{{item}}</text>
       </block>
     </view>
-  </view>
+  </view> -->
   <view class="search-box" wx:if="{{historySearch.length > 0}}">
     <view class='border-title'>历史搜索</view>
     <view class="search-content">
@@ -28,7 +28,7 @@
 </view>
 <view class="container" hidden="{{!showLesson}}">
   <block wx:for="{{lesson}}" wx:key="id">
-    <lesson-cmp item="{{item}}"></lesson-cmp>
+    <lesson-cmp item="{{item}}" bindmyEvent="onMyEvent"></lesson-cmp>
   </block>
   <view class='none' wx:if="{{noData}}">
     <image class="no-data" src="/images/no-data.png" mode="widthFix"></image>

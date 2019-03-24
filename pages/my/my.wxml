@@ -18,9 +18,9 @@
             </view>
             <image src="/images/arrow.png" mode="widthFix"></image>
         </view>
-        <view>
+        <view catchtap='profile'>
 
-            <view class="list-left">
+            <view class="list-left" >
                 <image src="/images/usermessage.png" mode="widthFix"></image>
                 <text>个人资料</text>
             </view>
@@ -45,7 +45,7 @@
             </view>
             <image src="/images/arrow.png" mode="widthFix"></image>
         </view>
-        <view>
+        <view class="item">
             <view class="list-left">
             <button class="kf_btn" open-type="contact"></button>
                 <image src="/images/talk.png" mode="widthFix"></image>
@@ -55,5 +55,4 @@
 
         </view>
     </view>
-    <button></button>
 </view>

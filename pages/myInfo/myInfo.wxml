@@ -1,0 +1,96 @@
+<view class="box">
+    <view class="lst">
+        <view class="left">
+            头像
+        </view>
+        <view class="right">
+            <image src="{{head_pic}}"></image>
+        </view>
+        <view class="clearBoth"></view>
+    </view>
+    <view class="lst">
+        <view class="left">
+            昵称
+        </view>
+        <view class="right">
+            {{nickname}}
+        </view>
+        <view class="clearBoth"></view>
+    </view>
+    <view class="lst">
+        <view class="left">
+            性别
+        </view>
+        <view class="right">
+            <view class="input left">
+                <picker bindchange="selectSex" range="{{sexArray}}" value="{{sexChk}}">
+                    <view>
+                        {{sexArray[sex]}}
+                    </view>
+                </picker>
+            </view>
+            <text class="fa fa-chevron-right"></text>
+        </view>
+        <view class="clearBoth"></view>
+    </view>
+    <view class="lst">
+        <view class="left">
+            真实姓名
+        </view>
+        <view class="right">
+            <input bindinput="inputUserName" class="input left" maxlength="8" placeholder="" value="{{name}}"></input>
+            <text class="fa fa-chevron-right"></text>
+        </view>
+        <view class="clearBoth"></view>
+    </view>
+    <view class="lst">
+        <view class="left">
+            手机号
+        </view>
+        <view class="right">
+            <input type="number" bindinput="inputMobile" class="input left"  value="{{mobile}}" maxlength="11"></input>
+            <text class="fa fa-chevron-right"></text>
+        </view>
+        <view class="clearBoth"></view>
+    </view>
+    <view class="lst">
+        <view class="left">
+            QQ
+        </view>
+        <view class="right">
+            <input type="number" bindinput="inputQQ" class="input left" maxlength="16" placeholder="" type="number" value="{{qq}}"></input>
+            <text class="fa fa-chevron-right"></text>
+        </view>
+        <view class="clearBoth"></view>
+    </view>
+    <button bindtap="save" class="btn">保存修改</button>
+</view>
+<view class="modal-box" hidden="{{flag}}">
+    <view class="modal-body">
+        <view class="modal-content">
+            <view class="title">
+                <view wx:if="{{phone}}">
+                    解除绑定
+                </view>
+                <view wx:else>
+                    绑定手机
+                </view>
+            </view>
+            <view class="box_info">
+                <view>
+                    <input bindinput="inputSendPhone" disabled="{{sendPhoneFlag}}" maxlength="11" placeholder="手机号码" type="number" value="{{sendPhone}}"></input>
+                </view>
+                <view class="box_code">
+                    <input bindinput="inputCode" maxlength="4" placeholder="验证码" type="number" value="{{code}}"></input>
+                    <button bindtap="send" class="{{sendClass}}" disabled="{{sendFlag}}">{{sendTxt}}</button>
+                    <view class="clearBoth"></view>
+                </view>
+            </view>
+            <view class="btn">
+                <button bindtap="hide" class="btn_hide">取消</button>
+                <view class="line left"></view>
+                <button bindtap="sub" class="btn_sub">确认</button>
+            </view>
+        </view>
+    </view>
+</view>

@@ -1,6 +1,12 @@
-// pages/search/search.js
+import {
+    base_url,
+    host_url
+} from "../../utils/config.js";
 import {HTTP} from "../../utils/http-promise.js";
 let http = new HTTP();
+import {
+    cnsub
+} from '../../utils/tools.js'
 Page({
 
   /**
@@ -22,12 +28,18 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.getHotLesson();
+    // this.getHotLesson();
   },
   getHotLesson(){
+    //   关键词 数组
     http.request({
-      url:"/hot_lesson"
+        url:"/index.php/api/lesson/getlessons?is_recommend=1"
     }).then(data=>{
+        data.lesson.forEach((item) => {
+            item.title = cnsub(item.title, 30);
+            item.remark = cnsub(item.lesson_remark, 66)
+            item.list_img = host_url + item.list_img;
+        });
       this.setData({
         hotLesson: data
       })
@@ -49,7 +61,7 @@ Page({
     let start = this.data.lesson.length;
     setTimeout(()=>{
       http.request({
-        url: `/query?q=${value}&start=${start}&size=6`
+          url: `/index.php/api/lesson/lessonSeacrch?key=${value}&start=${start}&size=6`
       }).then(data => {
         this.setLesson(data);
         this.unLocked();
@@ -66,6 +78,11 @@ Page({
         lesson:[]
       })
     } else {
+        data.lesson.forEach((item) => {
+            item.title = cnsub(item.title, 30);
+            item.remark = cnsub(item.lesson_remark, 66)
+            item.list_img = host_url + item.list_img;
+        });
       let lesson = this.data.lesson.concat(data.lesson);
       this.setData({
         lesson: lesson
@@ -158,6 +175,18 @@ Page({
       loading: false
     })
   },
+    onMyEvent(e) {
+        console.log(e)
+        let detail = null;
+        if (e.type == 'myEvent') {
+            detail = e.detail;
+        } else {
+            detail = e.currentTarget.dataset.detail;
+        }
+        wx.navigateTo({
+            url: `/pages/course/course?id=${detail.id}`
+        })
+    },
   /**
    * 用户点击右上角分享
    */

@@ -30,6 +30,7 @@ class HTTP {
       header: header,
       method: method,
       success: (res) => {
+        //   console.log(res);
         let data = res.data;
         if (data.status != undefined && data.status == 'ok' || data.status===0 ) {
           resolve(data.data)

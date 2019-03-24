@@ -1,4 +1,6 @@
-// pages/my/my.js
+import {
+    login, updateUser
+} from "../../utils/tools.js";
 Page({
 
   /**
@@ -14,12 +16,19 @@ Page({
   onLoad: function (options) {
 
   },
-
+    profile(){
+        wx.navigateTo({
+            url: '/pages/myInfo/myInfo',
+        })
+    },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
+      let openid = wx.getStorageSync("openid");
+      if (!openid) {
+          login(this);
+      }
   },
 
   /**

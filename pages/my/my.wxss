@@ -46,7 +46,9 @@
   width: 20rpx;
   vertical-align: middle;
 }
-
+.item {
+    position: relative;
+}
 .kec-list .list-left image{
   width: 40rpx;
   vertical-align: middle;

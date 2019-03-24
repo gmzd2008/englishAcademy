@@ -1,0 +1,69 @@
+/* components/confirmDialog/confirmDialog.wxss */
+
+.dialog-mask {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.6);
+    z-index: 20;
+}
+
+.dialog-info {
+    position: fixed;
+    z-index: 5000;
+    width: 80%;
+    max-width: 600rpx;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    background-color: rgba(187, 187, 187, 0.6);
+    text-align: center;
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.dialog-title {
+    font-size: 36rpx;
+    padding: 30rpx 30rpx 10rpx;
+}
+
+.dialog-content {
+    padding: 10rpx 30rpx 20rpx;
+    min-height: 80rpx;
+    font-size: 32rpx;
+    line-height: 1.3;
+    word-wrap: break-word;
+    word-break: break-all;
+    color: #666;
+}
+
+.dialog-footer {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    border-top: #999 solid 1px;
+    line-height: 90rpx;
+    font-size: 34rpx;
+}
+
+.dialog-btn {
+    width: 50%;
+    color: #3cc51f;
+}
+.dialog-btn:first-child{
+    border-right: #999 solid 1px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+/* 去除button 默认样式 */
+
+.wx-btn, .wx-btn::after {
+    padding: 0;
+    background: none;
+    border: none;
+    content: none;
+}

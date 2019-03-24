@@ -70,12 +70,14 @@ Page({
     },
     onMyEvent(e) {
         console.log(e)
-        let detail = e.detail;
-        // wx.navigateTo({
-        //   url: `/pages/detail/detail?id=${detail.id}&title=${detail.title}`
-        // })
+        let detail = null;
+        if (e.type == 'myEvent') {
+            detail = e.detail;
+        } else {
+            detail = e.currentTarget.dataset.detail;
+        }
         wx.navigateTo({
-            url: `/pages/course/course`
+            url: `/pages/course/course?id=${detail.id}`
         })
     },
     /**

@@ -42,10 +42,10 @@ Page({
   onReady: function () {
     
   },
-  getOneLesson(){
+  getOneLesson(id){
     let that = this
     http.request({
-      url: '/index.php/api/lesson/getOneLesson?id=1'
+      url: `/index.php/api/lesson/getOneLesson?id=${id}`
     }).then(data => {
       data.poster = host_url + data.poster
       data.list_img = host_url + data.list_img

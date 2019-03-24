@@ -1,5 +1,8 @@
 // pages/index/index.js
 import {
+    login, updateUser
+} from "../../utils/tools.js";
+import {
   base_url,
   host_url
 } from "../../utils/config.js";
@@ -36,11 +39,12 @@ Page({
   },
   onMyEvent(e) {
     console.log(e)
-    // let detail = e.detail;
-    // wx.navigateTo({
-    //   url: `/pages/detail/detail?id=${detail.id}&title=${detail.title}`
-    // })
-    let detail = e.currentTarget.dataset.detail;
+    let detail = null;
+    if(e.type == 'myEvent'){
+        detail = e.detail;
+    }else{
+        detail = e.currentTarget.dataset.detail;
+    }
     wx.navigateTo({
       url: `/pages/course/course?id=${detail.id}`
     })
@@ -114,6 +118,16 @@ Page({
       })
     })
   },
+    /**
+     * 生命周期函数--监听页面初次渲染完成
+     */
+    onReady: function () {
+        let openid = wx.getStorageSync('openid');
+        console.log('onready2', openid);
+        if (!openid) {
+            login(this);
+        }
+    },
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */

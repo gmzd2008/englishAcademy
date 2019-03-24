@@ -1,6 +1,7 @@
 {
   "usingComponents": {
-    "new-user-tips": "/components/newUserTips/index"
+    "new-user-tips": "/components/newUserTips/index",
+    "dialog": "/components/confirmDialog/index"
   },
   "navigationBarTitleText": "新用户注册"
 }

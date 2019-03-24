@@ -42,7 +42,7 @@ Component({
 
   },
   ready(){
-    console.log(this.data.option,this.data.imgs);
+    // console.log(this.data.option,this.data.imgs);
   },
 
   /**
