@@ -23,6 +23,11 @@ class HTTP {
     } else {
       url = base_url + url;
     };
+    if(method.toUpperCase=='POST'){
+        header = {
+            "Content-Type": "application/x-www-form-urlencoded"
+        }
+    }
     console.log(url);
     wx.request({
       url: url,

@@ -73,7 +73,7 @@
       </view>
       </view>
       <view class='share'>
-      <button class='shareBtn' open-type='share'>分享</button> <view class='money'><text>￥</text><text>197</text><text>/立即购买</text></view>
+      <button class='shareBtn' open-type='share'>分享</button> <view catchtap='pay' class='money'><text>￥</text><text>{{lesson.price}}</text><text>/立即购买</text></view>
       </view>
   </view>
   <!-- <view class='cont' wx:if="{{btnIndex=='1'}}">2</view> -->

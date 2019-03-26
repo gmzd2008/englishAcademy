@@ -1,11 +1,87 @@
+import {
+    HTTP
+} from "../../utils/http-promise.js";
+import {
+    toast,
+    jump,
+    login
+} from "../../utils/tools.js";
+import {
+    Order
+} from "../../utils/order-model.js";
+let http = new HTTP;
+let order = new Order();
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    btnIndex: "0"
-  },
+      btnIndex: "0",
+      lession:{},
+      orderStatus: 0,
+      orderId: ""
+    },
+    pay() {
+        let id = this.data.lesson.id;
+        let openid = wx.getStorageSync('openid');
+        console.log(id);
+        if (openid && id) {
+            if (this.data.orderStatus == 0) {
+                this._firstPay(openid, id);
+            } else {
+                this._oneMorePay(openid, id)
+            }
+        } else {
+            toast('用户openid 不存在', () => {
+                jump('/pages/my/my', 2);
+            });
+        }
+
+    },
+    _firstPay(openid, id) {
+        let that = this
+        order.doOrder({
+            openid,
+            id
+        }, (d) => {
+            console.log(d);
+            if (d.hasOwnProperty('id')) {
+                let orderId = d.id;
+                that.data.orderId = orderId;
+                that.data.orderStatus = 1;
+                console.log(that.data.orderId);
+                order.execPay(orderId, d => {
+                    if (d == 2) {
+                        toast('支付成功', () => {
+                            that.data.orderStatus = 1;
+                            jump('/pages/my/my', 2);
+                        });
+                    } else if (d == 1) {
+                        toast('支付失败');
+                    } else {
+                        toast('下单失败');
+                    }
+                });
+            } else {
+                toast('下单失败');
+            }
+
+        });
+    },
+    _oneMorePay(openid, id) {
+        let that = this
+        order.execPay(this.data.orderId, d => {
+            if (d == 2) {
+                toast('支付成功', () => {
+                    that.data.orderStatus = 1;
+                    jump('/pages/my/my', 2);
+                });
+            } else {
+                toast('支付失败');
+            }
+        });
+    },
   changeTab(e) {
     let index = e.target.dataset.index;
     this.setData({

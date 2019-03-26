@@ -142,4 +142,4 @@ let cnsub = function (str, n) {
     }
     return str;
 }
-export { login,updateUser,cnsub}
+export { jump,toast,login,updateUser,cnsub}

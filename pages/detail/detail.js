@@ -1,8 +1,16 @@
-// pages/detail/detail.js
 import {
   HTTP
 } from "../../utils/http-promise.js";
+import {
+    toast,
+    jump,
+    login
+} from "../../utils/tools.js";
+import {
+    Order
+} from "../../utils/order-model.js";
 let http = new HTTP;
+let order = new Order();
 Page({
 
   /**
@@ -71,7 +79,7 @@ Page({
   onLoad: function(options) {
     this.setNavTitle(options.title);
     this.getDetail(options.id);
-  },
+    },
   setNavTitle(title) {
     wx.setNavigationBarTitle({
       title: title
@@ -82,7 +90,7 @@ Page({
       url: "/detail?id=" + id
     }).then(data => {
       this.setData({
-        detailData: data
+        lesson: data
       })
     })
   },
