@@ -36,3 +36,6 @@
     color: #e07074;
     background-color: #f9ebe5;
 }
+.paystatus{
+    color:#F0151D;
+}

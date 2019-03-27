@@ -11,10 +11,10 @@
     <view class='jianjie'>
       <image src="{{lesson.lecturer.picture}}" mode='widthFix'></image>
       <view class='jianjieR'>
-        <text>{{lesson.lecturer.name}}</text>
+        <text>{{lesson.lecturer.tit}}：{{lesson.lecturer.name}}</text>
         <view class='rBottom'>
-          <text>教师简介</text>
-          <text style='margin-left:38rpx;'>系列课程</text>
+          <text>{{lesson.lecturer.description}}</text>
+          <!-- <text style='margin-left:38rpx;'>系列课程</text> -->
         </view>
       </view>
     </view>
@@ -64,12 +64,12 @@
     </view>
      <view class='zhanweilist'>
          <view>
-           <text>张上</text>
+           <text>张涛</text>
            <text>15678905678</text>
       </view>
       <view>
-           <text>张上</text>
-           <text>15678905678</text>
+           <text>刘露</text>
+           <text>13822785339</text>
       </view>
       </view>
       <view class='share'>

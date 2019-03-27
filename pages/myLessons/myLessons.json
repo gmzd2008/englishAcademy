@@ -1,0 +1,6 @@
+{
+    "usingComponents": {
+        "lesson-cmp": "/components/lesson/index"
+    },
+    "navigationBarTitleText": "已购课程"
+}

@@ -1,0 +1,6 @@
+<view class="container">
+    <block wx:for="{{lesson}}" wx:key="id">
+        <lesson-cmp item="{{item}}" bindmyEvent="onMyEvent" bindpayEvent="onPayEvent"></lesson-cmp>
+    </block>
+    <view class='no-more' wx:if="{{noMore}}">没有更多了！</view>
+</view>

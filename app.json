@@ -1,5 +1,6 @@
 {
     "pages": [
+        "pages/my/my",
         "pages/index/index",
         "pages/register/register",
         "pages/course/course",
@@ -8,9 +9,10 @@
         "pages/search/search",
         "pages/detail/detail",
         "pages/courseDetails/courseDetails",
-        "pages/my/my",
+        "pages/myLesssons/myLessons",
         "pages/myInfo/myInfo",
-        "pages/comment/comment"
+        "pages/comment/comment",
+        "pages/myLessons/myLessons"
     ],
     "window": {
         "navigationBarBackgroundColor": "#F0151D",

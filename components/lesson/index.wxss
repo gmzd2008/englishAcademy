@@ -56,3 +56,6 @@
     align-items: center;
     padding:0 20rpx;
 }
+.item-right .buy .paystatus{
+    color:#F0151D;
+}

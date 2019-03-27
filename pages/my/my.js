@@ -16,10 +16,18 @@ Page({
   onLoad: function (options) {
 
   },
+    myLess() {
+        wx.navigateTo({
+            url: '/pages/myLessons/myLessons',
+        })
+    },
     profile(){
         wx.navigateTo({
             url: '/pages/myInfo/myInfo',
         })
+    },
+    myShare(){
+        console.log(' myShare');
     },
   /**
    * 生命周期函数--监听页面初次渲染完成

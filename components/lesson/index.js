@@ -25,6 +25,10 @@ Component({
             //console.log(e);
             let detail = e.currentTarget.dataset.detail;
             this.triggerEvent("myEvent", detail);
+        },
+        goPay(e){
+            let detail = e.currentTarget.dataset.detail;
+            this.triggerEvent("payEvent", detail);
         }
     }
 })

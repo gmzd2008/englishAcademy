@@ -11,7 +11,7 @@
     </view>
     <view class="line"></view>
     <view class="kec-list">
-        <view>
+        <view catchtap='myLess'>
             <view class="list-left">
                 <image src="/images/bookmark.png" mode="widthFix"></image>
                 <text>已购课程</text>
@@ -21,7 +21,7 @@
         <view catchtap='profile'>
 
             <view class="list-left" >
-                <image src="/images/usermessage.png" mode="widthFix"></image>
+                <image src="/images/user1Chk.png" mode="widthFix"></image>
                 <text>个人资料</text>
             </view>
 
@@ -38,7 +38,7 @@
     </view>
     <view class="line"></view>
     <view class="kec-list1 kec-list">
-        <view>
+        <view catchtap='myShare'>
             <view class="list-left">
                 <image src="/images/share.png" mode="widthFix"></image>
                 <text>推广二维码</text>
