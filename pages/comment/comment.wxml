@@ -11,7 +11,7 @@
     </view>
   </view>
   <textarea placeholder='写点什么吧' focus='true' bindinput='textAreaCon'></textarea>
-  <image class="uploadFile" wx:if="{{imgUrl}}" src="{{imgUrl}}"></image>
-  <view wx:else class="uploadFile" bindtap="upload">+</view>
+  <!-- <image class="uploadFile" wx:if="{{imgUrl}}" src="{{imgUrl}}"></image>
+  <view wx:else class="uploadFile" bindtap="upload">+</view> -->
 </view>
 <button type='submit' bindtap="onSave">提交保存</button>

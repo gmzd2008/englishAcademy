@@ -103,7 +103,7 @@
         </view>
         <view wx:else>
           <view class="no-info">
-            <icon color="#ccc" size="80" type="info"></icon>
+            <icon color="#ccc" size="50" type="info"></icon>
             暂无评论
           </view>
         </view>
@@ -114,7 +114,7 @@
       <view class="voice" bindtap='record'>
         <image src="../../images/audio/icon_addvoice.png"></image>
       </view>
-      <view class="remark" bindtap="show">发评论</view>
+      <view class="remark" bindtap="remark">发评论</view>
     </view>
 </view>
 <view class='kefu ' wx:if="{{btnIndex=='3'}}">3</view>

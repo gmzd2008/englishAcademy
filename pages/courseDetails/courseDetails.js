@@ -88,6 +88,12 @@ Page({
       btnIndex: index
     })
   },
+  remark(){
+    let lessId = this.data.lession.id;
+    wx.navigateTo({
+      url: '/pages/comment/comment?id='+lessId
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */

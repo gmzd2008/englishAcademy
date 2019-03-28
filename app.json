@@ -1,51 +1,51 @@
 {
-    "pages": [
-        "pages/my/my",
-        "pages/index/index",
-        "pages/register/register",
-        "pages/course/course",
-        "pages/lesson/lesson",
-        "pages/login/login",
-        "pages/search/search",
-        "pages/detail/detail",
-        "pages/courseDetails/courseDetails",
-        "pages/myLesssons/myLessons",
-        "pages/myInfo/myInfo",
-        "pages/comment/comment",
-        "pages/myLessons/myLessons"
-    ],
-    "window": {
-        "navigationBarBackgroundColor": "#F0151D",
-        "navigationBarTextStyle": "white",
-        "navigationBarTitleText": "SpeakUp课程中心"
-    },
-    "networkTimeout": {
-        "request": 20000,
-        "connectSocket": 20000,
-        "uploadFile": 20000,
-        "downloadFile": 20000
-    },
-    "tabBar": {
-        "selectedColor": "#319cfc",
-        "list": [
-            {
-                "pagePath": "pages/index/index",
-                "text": "首页",
-                "iconPath": "/images/nav1.png",
-                "selectedIconPath": "/images/nav1cur.png"
-            },
-            {
-                "pagePath": "pages/lesson/lesson",
-                "text": "课程",
-                "iconPath": "/images/nav2.png",
-                "selectedIconPath": "/images/nav2cur.png"
-            },
-            {
-                "pagePath": "pages/my/my",
-                "text": "我的",
-                "iconPath": "/images/nav3.png",
-                "selectedIconPath": "/images/nav3cur.png"
-            }
-        ]
-    }
+  "pages": [
+    "pages/index/index",
+    "pages/register/register",
+    "pages/course/course",
+    "pages/lesson/lesson",
+    "pages/login/login",
+    "pages/search/search",
+    "pages/detail/detail",
+    "pages/courseDetails/courseDetails",
+    "pages/myLesssons/myLessons",
+    "pages/my/my",
+    "pages/myInfo/myInfo",
+    "pages/comment/comment",
+    "pages/myLessons/myLessons"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#F0151D",
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "SpeakUp课程中心"
+  },
+  "networkTimeout": {
+    "request": 20000,
+    "connectSocket": 20000,
+    "uploadFile": 20000,
+    "downloadFile": 20000
+  },
+  "tabBar": {
+    "selectedColor": "#319cfc",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "/images/nav1.png",
+        "selectedIconPath": "/images/nav1cur.png"
+      },
+      {
+        "pagePath": "pages/lesson/lesson",
+        "text": "课程",
+        "iconPath": "/images/nav2.png",
+        "selectedIconPath": "/images/nav2cur.png"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "text": "我的",
+        "iconPath": "/images/nav3.png",
+        "selectedIconPath": "/images/nav3cur.png"
+      }
+    ]
+  }
 }

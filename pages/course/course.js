@@ -98,8 +98,9 @@ Page({
     });
   },
   _oneMorePay(openid, id) {
-    let that = this
-    order.execPay(this.data.orderId, d => {
+    let that = this;
+    let orderId = this.data.orderId;
+    order.execPay(orderId, d => {
       if (d == 2) {
         toast('支付成功', () => {
           that.data.orderStatus = 1;
