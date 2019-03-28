@@ -1,185 +1,199 @@
-.imgeW{
-  width: 100%;
-  height:400rpx;
+.imgeW {
+    width: 100%;
+    height: 400rpx;
 }
-.imgeW image{
-  width: 100%;
-  height: 400rpx;
-}
-.tabtitle{
-  box-sizing: border-box;
-  width: 100%;
-  display: flex;
-  padding: 26rpx 30rpx;
-  justify-content:space-between;
-}
-.tabtitle text{
-  width:133rpx;
-  height:46rpx;
-  border-bottom: 2px solid #fff;
-  font-size: 14px;
-  text-align: center;
-}
-.tabtitle .hover{
-  color: rgb(232, 32, 80);
-  border-bottom: 2px solid rgb(232, 32, 80);
-}
-.kefu{
-  top: -4rpx;
-}
-.desc{
-  font-size: 16px;
- width: 700rpx;
- margin: 0 auto;
-padding-bottom: 20rpx;
 
+.imgeW image {
+    width: 100%;
+    height: 400rpx;
+}
 
+.tabtitle {
+    box-sizing: border-box;
+    width: 100%;
+    display: flex;
+    padding: 26rpx 30rpx;
+    justify-content: space-between;
 }
-.desc view{
-  margin-top: 14rpx;
-}
-.detsilsimg image{
-  width: 100%;
-  height: 1080rpx;
-}
-.fmoney{
- width: 750rpx;
- height: 90rpx;
- font-size: 16px;
-}
-.buy{
-  float: right;
-  width: 314rpx;
-  height: 90rpx;
-  line-height: 90rpx;
-  background: #FF9800;
-  color: #fff;
-  text-align: center;
-}
-.canyu{
-  color: #888888;
-  width: 166rpx;
-  height: 90rpx;
-  display: inline-block;
-  line-height: 90rpx;
-  font-size: 16px;
-  margin-left: 30rpx;
 
+.tabtitle text {
+    width: 133rpx;
+    height: 46rpx;
+    border-bottom: 2px solid #fff;
+    font-size: 14px;
+    text-align: center;
+}
 
+.tabtitle .hover {
+    color: rgb(232, 32, 80);
+    border-bottom: 2px solid rgb(232, 32, 80);
+}
+
+.kefu {
+    top: -4rpx;
+}
+
+.desc {
+    font-size: 16px;
+    width: 700rpx;
+    margin: 0 auto;
+    padding-bottom: 20rpx;
+}
+
+.desc view {
+    margin-top: 14rpx;
+}
+
+.detsilsimg image {
+    width: 100%;
+    height: 1080rpx;
+}
+
+.fmoney {
+    width: 750rpx;
+    height: 90rpx;
+    font-size: 16px;
+}
+
+.buy {
+    height: 90rpx;
+    line-height: 90rpx;
+    background: #ff9800;
+    color: #fff;
+    text-align: center;
+}
+
+.canyu {
+    color: #888;
+    width: 166rpx;
+    height: 90rpx;
+    display: inline-block;
+    line-height: 90rpx;
+    font-size: 16px;
+    margin-left: 30rpx;
 }
 
 /**
 课程评论
 **/
+
 .msg_list {
-  padding: 10px;
+    padding: 10px;
 }
 
 .msg_list .tt {
-  font-size: 14px;
-  height: 40px;
-  line-height: 40px;
+    font-size: 14px;
+    height: 40px;
+    line-height: 40px;
 }
 
 .msg_list .pic {
-  width: 10%;
+    width: 10%;
 }
 
 .msg_list .pic image {
-  width: 100%;
-  border-radius: 100%;
+    width: 100%;
+    border-radius: 100%;
 }
 
 .msg_list .info {
-  width: 88%;
+    width: 88%;
 }
 
 .msg_list .tit {
-  font-size: 12px;
-  height: 24px;
-  line-height: 22px;
+    font-size: 12px;
+    height: 24px;
+    line-height: 22px;
 }
 
 .msg_list .txt {
-  font-size: 12px;
-  color: #999;
-  line-height: 22px;
+    font-size: 12px;
+    color: #999;
+    line-height: 22px;
 }
 
 .msg_list .date {
-  font-size: 12px;
-  color: #999;
-  line-height: 22px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    color: #999;
+    line-height: 22px;
 }
 
 .msg_list .message-box {
-  padding: 5px 0px;
-  border-bottom: 1px dotted #eee;
+    padding: 5px 0px;
+    border-bottom: 1px dotted #eee;
+}
+
+.message-box {
+    display: flex;
+    flex-direction: row;
 }
 
 .msg_bottom {
-  height: 45px;
+    height: 45px;
 }
 
 .msg_box {
-  height: 45px;
-  position: fixed;
-  left: 0px;
-  right: 0px;
-  bottom: 0px;
-  border-top: 1px solid #eee;
-  background: #fff;
-  display: flex;
+    height: 45px;
+    position: fixed;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    border-top: 1px solid #eee;
+    background: #fff;
+    display: flex;
 }
 
 .msg_box .voice {
-  overflow: hidden;
-  width: 12%;
+    overflow: hidden;
+    width: 12%;
 }
 
 .msg_box .voice image {
-  width: 40rpx;
-  height: 40rpx;
+    width: 40rpx;
+    height: 40rpx;
 }
 
 .msg_box .remark {
-  width: 80%;
-  background: #ccc;
+    width: 80%;
+    background: #ccc;
 }
 
 .msg_box view {
-  height: 25px;
-  line-height: 25px;
-  margin: 10px 0;
-  font-size: 12px;
-  text-indent: 10px;
+    height: 25px;
+    line-height: 25px;
+    margin: 10px 0;
+    font-size: 12px;
+    text-indent: 10px;
 }
 
 .c_box {
-  background: #f9fafc;
-  border: 1px solid #e2e6e9;
-  padding: 10rpx;
-  border-radius: 8px;
-  margin-bottom: 10px;
-  margin-left: 10px;
-  margin-right: 10px
+    background: #f9fafc;
+    border: 1px solid #e2e6e9;
+    padding: 10rpx;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
-.myVideo{
-  width:100%;
-  display:flex;
-  line-height:0;
-  overflow:hidden;
-  position:relative;
-  z-index:0;
+.myVideo {
+    width: 100%;
+    display: flex;
+    line-height: 0;
+    overflow: hidden;
+    position: relative;
+    z-index: 0;
 }
+
 .no-info {
-  position: relative;
-  left: 50%;
-  transform: translate(-50%,0);
-  width: 200rpx;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 200rpx;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }

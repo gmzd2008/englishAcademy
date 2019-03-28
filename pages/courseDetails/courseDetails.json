@@ -1,1 +1,6 @@
-{}
+{
+"usingComponents": {
+    "mystar": "/components/star/index"
+},
+"navigationBarTitleText": "课程详情页"
+}

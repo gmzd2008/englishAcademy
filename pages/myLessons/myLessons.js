@@ -58,7 +58,30 @@ Page({
         let detail = null;
         if (e.type == 'myEvent') {
             detail = e.detail;
+            // this._oneMorePay();
         }
+    },
+    _oneMorePay(openid, id) {
+        let that = this;
+        let orderId = this.data.orderId;
+        order.execPay(orderId, d => {
+            if (d == 2) {
+                toast('支付成功', () => {
+                    that.data.orderStatus = 1;
+                    that.updateOrderStatus(orderId);
+                    jump('/pages/my/my', 2);
+                });
+            } else {
+                toast('支付失败');
+            }
+        });
+    },
+    /**
+     * @param id 订单id
+     * 支付完成修改订单状态
+     */
+    updateOrderStatus(id) {
+        order.updateOrderStatus(id);
     },
     /**
      * 页面上拉触底事件的处理函数

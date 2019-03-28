@@ -1,4 +1,8 @@
 import {
+    base_url,
+    host_url
+} from "../../utils/config.js";
+import {
     HTTP
 } from "../../utils/http-promise.js";
 import {
@@ -13,14 +17,15 @@ let http = new HTTP;
 let order = new Order();
 Page({
 
-  /**
-   * 页面的初始数据
-   */
-  data: {
-      btnIndex: "0",
-      lession:{},
-      orderStatus: 0,
-      orderId: ""
+    /**
+     * 页面的初始数据
+     */
+    data: {
+        btnIndex: "1",
+        lesson: [],
+        comments:[],
+        orderStatus: 0,
+        orderId: ""
     },
     pay() {
         let id = this.data.lesson.id;
@@ -82,71 +87,103 @@ Page({
             }
         });
     },
-  changeTab(e) {
-    let index = e.target.dataset.index;
-    this.setData({
-      btnIndex: index
-    })
-  },
-  remark(){
-    let lessId = this.data.lession.id;
-    wx.navigateTo({
-      url: '/pages/comment/comment?id='+lessId
-    })
-  },
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (opt) {
-    console.log(opt)
-  },
+    changeTab(e) {
+        let index = e.target.dataset.index;
+        let id = this.data.lesson.id;
+        if(index == 2 && id ){
+            this.getComments(id);
+        }
+        this.setData({
+            btnIndex: index
+        })
+    },
+    remark() {
+        let lessId = this.data.lesson.id;
+        wx.navigateTo({
+            url: '/pages/comment/comment?id=' + lessId
+        })
+    },
+    getOneLessCom(id) {
+        let that = this
+        http.request({
+            url: `/index.php/api/lesson/getOneLessCom?id=${id}`
+        }).then(data => {
+            data.poster = host_url + data.poster
+            data.list_img = host_url + data.list_img
+            console.log(data);
+            that.setData({
+                lesson: data
+            })
+        })
+    },
+    getComments(id) {
+        let that = this
+        http.request({
+            url: `/index.php/api/lesson/getComments?id=${id}`
+        }).then(data => {
+            console.log(data);
+            that.setData({
+                comments: data
+            })
+        })
+    },
+    /**
+     * 生命周期函数--监听页面加载
+     */
+    onLoad: function(opt) {
+        console.log(opt)
+        // opt = opt.hasOwnProperty('id') ? opt : {
+        //     id: 2
+        // };
+        this.getOneLessCom(opt.id);
+    },
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
+    /**
+     * 生命周期函数--监听页面初次渲染完成
+     */
+    onReady: function() {
 
-  },
+    },
 
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
+    /**
+     * 生命周期函数--监听页面显示
+     */
+    onShow: function() {
 
-  },
+    },
 
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
+    /**
+     * 生命周期函数--监听页面隐藏
+     */
+    onHide: function() {
 
-  },
+    },
 
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
+    /**
+     * 生命周期函数--监听页面卸载
+     */
+    onUnload: function() {
 
-  },
+    },
 
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
+    /**
+     * 页面相关事件处理函数--监听用户下拉动作
+     */
+    onPullDownRefresh: function() {
 
-  },
+    },
 
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
+    /**
+     * 页面上拉触底事件的处理函数
+     */
+    onReachBottom: function() {
 
-  },
+    },
 
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
+    /**
+     * 用户点击右上角分享
+     */
+    onShareAppMessage: function() {
 
-  }
+    }
 })

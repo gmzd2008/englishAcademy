@@ -1,6 +1,6 @@
 <view class=''>
   <view class='imgeW'>
-    <image src='/images/vue.png'></image>
+    <image src="{{lesson.poster}}"></image>
   </view>
   <view class='tabtitle' bindtap='changeTab'>
     <text class=' title1' class='{{btnIndex ==0 ? "hover": "" }} ' data-index="0">课程简介</text>
@@ -14,6 +14,7 @@
 </view>
 <view  wx:if="{{btnIndex=='0'}}">
 <view class='desc '>
+    {{lesson.content}}
     <view>
        <text  decode="{{true}}" space="{{true}}">课程题目:&nbsp;&nbsp;</text>
        <text>biaobairu</text>
@@ -39,7 +40,8 @@
   <image src='/images/less-1.jpg '></image>
 </view>
 <view class='fmoney '>
-  <text class='canyu '>5698参与</text> <text class='buy '>购买：年费/￥98</text>
+  <!-- <text class='canyu '>5698参与</text> <text class='buy '>购买：年费/￥98</text> -->
+  <button class='wx-btn buy' open-type='share'><text>分享给好友</text></button>
 </view>
 </view>
 <view class='mulu ' wx:if="{{btnIndex=='1'}}">1</view>
@@ -47,55 +49,24 @@
     <view class="msg_list">
       <view class="tt">最新评论</view>
       <view class="lst">
-        <view wx:if="{{list}}">
-          <view class="message-item" wx:for="{{list}}" wx:for-index="i" wx:key="key">
+        <view wx:if="{{comments}}">
+          <view class="message-item" wx:for="{{comments}}" wx:for-index="i" wx:key="key">
             <view class="message-box">
-              <view class="pic left" wx:if="{{item.headimgurl}}">
-                <image mode="widthFix" src="{{item.headimgurl}}"></image>
+              <view class="pic left" wx:if="{{item.head_pic}}">
+                <image mode="widthFix" src="{{item.head_pic}}"></image>
               </view>
               <view class="pic left" wx:else>
                 <image mode="widthFix" src="../../images/doumiao.png"></image>
               </view>
               <view class="info right">
                 <view class="tit" wx:if="{{item.nickname}}">
-                  {{item.nickname}}
+                  
                   <view class="date right">
-                  <text class="fa fa-clock-o"></text> {{item.addTime}}
+                   <mystar stars="{{item.lesson_rank}}"></mystar>
+                  <text class="fa fa-clock-o"></text> {{item.add_time}}
                 </view>
                 </view>
-                <view class="tit" wx:else>豆苗</view>
-                <view wx:if="{{item.audio}}" style="width: {{item.audio_time*5 + 180}}rpx;" bindtap="{{replyFunction}}"  data-src="https://xuedou.ybb18.com/{{item.audio}}" data-rid="{{item.id}}" class='myLuYin'>
-                  <image src="../../images/audio/{{(replyPlayStatus && rid == item.id) ? 'iconplay.gif' : 'iconpause.png'}}"></image>
-                  <text class="rtime">{{item.audio_time}}`</text>
-                </view>
-                <view wx:if="{{item.content}}" class="txt">{{item.content}}</view>
-                
-                <view class="replyBtn">
-                  <view bindtap="showReplyBox" data-id="{{item.id}}">
-                    <image src="../../images/audio/common.png"></image>
-                    <text>回复</text>
-                  </view>
-                   <view bindtap="zan"  data-id="{{item.id}}">
-                    <image src="../../images/audio/praise.png"></image>
-                    <text>赞</text>
-                  </view>
-                </view>
-                <view class="replyBox">
-                  <view class="zan_name" wx:if="{{item.zan.length > 0}}">
-                    <image src="../../images/audio/praise.png"></image>
-                    <text wx:for="{{item.zan}}" wx:for-item="it" wx:for-index="in" wx:key="key">{{in > 0?',':''}}{{it.nickname}}</text>
-                  </view>
-                  <view class="replyLi" wx:if="{{item.reply.length>0}}" wx:for="{{item.reply}}" wx:for-item="items" wx:key="key">
-                    <view class="replyTitle" >
-                      {{items.nickname}}：
-                    </view>
-                    <view wx:if="{{items.audio}}" style="width: {{items.audio_time*5 + 100}}rpx;" bindtap="{{replyFunction}}" data-src="https://xuedou.ybb18.com/{{items.audio}}" data-rid="{{items.id}}" class='replyYy'>
-                      <image src="../../images/audio/{{(replyPlayStatus && rid == items.id) ? 'iconplay.gif' : 'iconpause.png'}}"></image>
-                      <text class="rtime">{{items.audio_time}}`</text>
-                    </view>
-                    <view wx:if="{{items.content}}" class="replyTxt">{{items.content}}</view>
-                  </view>
-                </view>
+                <view wx:if="{{item.content}}" class="txt">{{item.nickname}} : {{item.content}}</view>
               </view>
               <view class="clearBoth"></view>
             </view>
@@ -112,7 +83,7 @@
     <view class="msg_bottom"></view>
     <view class="msg_box">
       <view class="voice" bindtap='record'>
-        <image src="../../images/audio/icon_addvoice.png"></image>
+        <!-- <image src="../../images/icon_addvoice.png"></image> -->
       </view>
       <view class="remark" bindtap="remark">发评论</view>
     </view>

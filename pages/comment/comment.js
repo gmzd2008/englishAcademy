@@ -1,10 +1,14 @@
-// pages/comment/comment.js
+import {
+    HTTP
+} from "../../utils/http-promise.js";
+let http = new HTTP();
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
+    id:'',
     stars: 5,
     userInput:""
   },
@@ -38,21 +42,38 @@ Page({
       },
     })
   },
-  onSave(){
+  onSaveComment(){
     if (this.data.userInput == ""){
       wx.showModal({
         title: '提示',
         content: '输入点内容吧',
       })
     } else {
-      console.log(this.data)
+        let openid = wx.getStorageSync("openid");
+        let id = this.data.id;
+        let cnt = encodeURI(this.data.userInput);
+        let stars = this.data.stars;
+        http.request({
+            url: `/index.php/api/lesson/onSaveComment?id=${id}&content=${cnt}&stars=${stars}&openid=${openid}`
+        }).then(data => {
+            wx.showToast({
+                title: '提交成功',
+                success(){
+                    setTimeout(()=>{
+                        wx.redirectTo({
+                            url: '/pages/courseDetails/courseDetails?id=' +id,
+                        })
+                    },1000);
+                }
+            })
+        })
     }
   },
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
-
+  onLoad: function (opt) {
+      this.setData({id:opt.id});
   },
 
   /**
