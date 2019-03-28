@@ -59,7 +59,17 @@ class Order{
             }
         );
     }
-
+    updateOrderStatus(id){
+      var allParams = {
+        url: '/index.php/api/order/updateOrderStatus',
+        method: 'post',
+        header: { "Content-Type": "application/x-www-form-urlencoded" },
+        data: { id: orderNumber }
+      };
+      http.request(allParams).then(res=>{
+        console.log('更新订单支付状态', res)
+      });
+    }
     /*获得所有订单,pageIndex 从1开始*/
     getOrders(pageIndex,callback){
         var allParams = {
