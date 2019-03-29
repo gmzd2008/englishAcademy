@@ -121,7 +121,7 @@ Page({
     /**
      * 生命周期函数--监听页面初次渲染完成
      */
-    onReady: function () {
+    onShow: function () {
         let openid = wx.getStorageSync('openid');
         console.log('onready2', openid);
         if (!openid) {

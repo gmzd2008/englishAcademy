@@ -1,1 +1,6 @@
-{}
+{
+  "usingComponents": {
+    "new-user-tips": "/components/newUserTips/index"
+  },
+  "navigationBarTitleText": "课程介绍"
+}

@@ -14,7 +14,7 @@
         <view catchtap='myLess'>
             <view class="list-left">
                 <image src="/images/bookmark.png" mode="widthFix"></image>
-                <text>已购课程</text>
+                <text>我的课程</text>
             </view>
             <image src="/images/arrow.png" mode="widthFix"></image>
         </view>

@@ -6,9 +6,16 @@ import {
     HTTP
 } from "../../utils/http-promise.js";
 import {
-    cnsub
-} from '../../utils/tools.js'
+  Order
+} from "../../utils/order-model.js";
+import {
+  toast,
+  jump,
+  login,
+  cnsub
+} from "../../utils/tools.js";
 let http = new HTTP();
+let order = new Order();
 Page({
 
     /**
@@ -54,16 +61,16 @@ Page({
         })
     },
     onPayEvent(e){
-        console.log(e)
-        let detail = null;
-        if (e.type == 'myEvent') {
-            detail = e.detail;
-            // this._oneMorePay();
+        let detail = e.detail;
+        let openid = wx.getStorageSync('openid');
+      console.log(e, openid)
+      if (e.type == 'payEvent' && detail.pay_status == "0" && openid) {
+            this._oneMorePay(openid,detail.order_id);
         }
     },
-    _oneMorePay(openid, id) {
+  _oneMorePay(openid, orderId) {
+    console.log(orderId);
         let that = this;
-        let orderId = this.data.orderId;
         order.execPay(orderId, d => {
             if (d == 2) {
                 toast('支付成功', () => {

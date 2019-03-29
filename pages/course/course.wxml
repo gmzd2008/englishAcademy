@@ -80,3 +80,4 @@
     </view>
     <!-- <view class='cont' wx:if="{{btnIndex=='1'}}">2</view> -->
 </view>
+<new-user-tips wx:if="{{tip}}"></new-user-tips>
