@@ -1,8 +1,7 @@
 import {
-    login, updateUser
+    login, updateUser,getSmsCode,toast,jump
 } from "../../utils/tools.js";
 import {
-    base_url,
     host_url
 } from "../../utils/config.js";
 import {
@@ -20,11 +19,12 @@ Page({
         act: "",
         randCode: "",
         tempCode: "",
-        mobile: "13366668431",
+        mobile: "",
         subMobile: "",
         pwd1: "",
         pwd2: "",
         wxCode: "",
+        timerNum:60,
         confirmShow: true,
         tip: false
     },
@@ -32,6 +32,7 @@ Page({
         console.log(e);
     },
     getCode: function() {
+        let that = this
         let mobile = this.data.mobile;
         let reg = /^1[3|5|6|7|8|9]\d{9}$/;
         if (!(reg.test(mobile))) {
@@ -42,8 +43,12 @@ Page({
         http.request({
             url: "/index.php/api/user/checkMobile?mobile=" + mobile
         }).then(data => {
+            // 手机号未注册
+            if(data.code == '10000'){
+                that.setTimer(60);
+            }
             let subMobile = mobile.substr(0, 3) + '****' + mobile.substr(8, 4);
-            this.getRandNu();
+            // this.getRandNu();
             console.log(data, subMobile)
             this.setData({
                 subMobile: subMobile,
@@ -54,22 +59,48 @@ Page({
 
     },
     setCode: function() {
-        if (this.data.tempCode != this.data.randCode) {
+        let that = this
+        if (that.data.tempCode != that.data.randCode) {
             return wx.showToast({
                 title: '验证码不正确',
             })
         }
-        this.setData({
-            setCode: true,
-            getcodeShow: false
-        })
-    },
-    getRandNu() {
-        let tempCode = parseInt(Math.random() * 99999);
-        this.setData({
-            tempCode: tempCode
+        let openid = wx.getStorageSync('openid');
+        let mobile = that.data.mobile;
+        http.request({
+            url: '/index.php/api/user/updateUser',
+            method: 'POST',
+            header: {
+                "Content-Type": "application/x-www-form-urlencoded"
+            },
+            data:{openid:openid,mobile:mobile}
+        }).then(res=>{
+            toast('手机绑定成功');
+            that.setData({
+                setCode: true,
+                getcodeShow: false
+            })
         });
 
+    },
+    setTimer(t) {
+        let that = this
+        if(t==60){
+            let mobile = this.data.mobile;
+            getSmsCode(mobile,(res)=>{
+                console.log(res);
+                that.setData({ tempCode:res.code.substr(11)});
+                toast('发送成功');
+            });
+        }
+        --t;
+        if (t > 0) {
+            setTimeout(() => {
+                console.log(t);
+                that.setTimer(t);
+            }, 1000);
+        }
+        that.setData({ timerNum: t });
     },
     inputRandCode(e) {
         let val = e.detail.value;
@@ -176,6 +207,7 @@ Page({
                 title: "新用户注册"
             })
         }
+        console.log('13366668439984473'.substr(11));
         // this.updateUser()
     },
 
@@ -191,23 +223,28 @@ Page({
         console.log('onready2', openid);
         if (!openid) {
             login(that);
+        } else if (userStatus == '10000') {
+            toast('已经注册了',()=>{
+                jump('/pages/index/index',2);
+            });
         } else if (userStatus == '10003') {
             that.setData({
                 tip: true
             })
-        }
-        wx.getSetting({
-            success: (res) => {
-                if (res.authSetting['scope.userInfo']) {
-                    updateUser(that, () => {
-                        wx.setStorageSync('userStatus', "10002");
-                    });
-                } else {
-                    console.log("onReady 未授权");
-                    that.dialog.showDialog();
+        }else{
+            wx.getSetting({
+                success: (res) => {
+                    if (res.authSetting['scope.userInfo']) {
+                        updateUser(that, () => {
+                            wx.setStorageSync('userStatus', "10002");
+                        });
+                    } else {
+                        console.log("onReady 未授权");
+                        that.dialog.showDialog();
+                    }
                 }
-            }
-        })
+            })
+        }
     },
 
     /**

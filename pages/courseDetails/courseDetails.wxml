@@ -1,9 +1,10 @@
+<import src="../../utils/wxParse/wxParse.wxml"></import>
 <view class=''>
   <view class='imgeW'>
     <image src="{{lesson.poster}}"></image>
   </view>
   <view class='tabtitle' bindtap='changeTab'>
-    <text class=' title1' class='{{btnIndex ==0 ? "hover": "" }} ' data-index="0">课程简介</text>
+    <text class=' title1' class='{{btnIndex ==0 ? "hover": "" }} ' data-index="0">课程详情</text>
     <!-- <text class='title2' class='{{btnIndex == 1 ? "hover": ""}} ' data-index="1">课程目录</text> -->
     <text class='title3' class='{{btnIndex == 2 ? "hover": "" }}
      data-index="2">课程评论</text>
@@ -12,81 +13,65 @@
      <text class=' {{btnIndex==3 ? "hover": ""}} ' data-index="3">联系客服</text>
      </view>
 </view>
-<view  wx:if="{{btnIndex=='0'}}">
-<view class='desc '>
-    {{lesson.content}}
-    <view>
-       <text  decode="{{true}}" space="{{true}}">课程题目:&nbsp;&nbsp;</text>
-       <text>biaobairu</text>
-
-    </view>
-     <view>
-       <text  decode="{{true}}" space="{{true}}">开课日期:&nbsp;&nbsp;</text>
-       <text>3</text>
-
-    </view>
-     <view>
-       <text  decode="{{true}}" space="{{true}}">上课时段:&nbsp;&nbsp;</text>
-       <text>34526377</text>
-
-    </view>
-     <view>
-        <text  decode="{{true}}" space="{{true}}">上课地点:&nbsp;&nbsp;</text>
-       <text>songjianshis</text>
-
-    </view>
-</view>
-<view class='detsilsimg '>
-  <image src='/images/less-1.jpg '></image>
-</view>
-<view class='fmoney '>
-  <!-- <text class='canyu '>5698参与</text> <text class='buy '>购买：年费/￥98</text> -->
-  <button class='wx-btn buy' open-type='share'><text>分享给好友</text></button>
-</view>
-</view>
-<view class='mulu ' wx:if="{{btnIndex=='1'}}">1</view>
-<view class='pinglun ' wx:if="{{btnIndex=='2'}}">
-    <view class="msg_list">
-      <view class="tt">最新评论</view>
-      <view class="lst">
-        <view wx:if="{{comments}}">
-          <view class="message-item" wx:for="{{comments}}" wx:for-index="i" wx:key="key">
-            <view class="message-box">
-              <view class="pic left" wx:if="{{item.head_pic}}">
-                <image mode="widthFix" src="{{item.head_pic}}"></image>
-              </view>
-              <view class="pic left" wx:else>
-                <image mode="widthFix" src="../../images/doumiao.png"></image>
-              </view>
-              <view class="info right">
-                <view class="tit" wx:if="{{item.nickname}}">
-                  
-                  <view class="date right">
-                   <mystar stars="{{item.lesson_rank}}"></mystar>
-                  <text class="fa fa-clock-o"></text> {{item.add_time}}
-                </view>
-                </view>
-                <view wx:if="{{item.content}}" class="txt">{{item.nickname}} : {{item.content}}</view>
-              </view>
-              <view class="clearBoth"></view>
+<view class="container">
+    <view class="" wx:if="{{btnIndex=='0'}}">
+            <view class='desc '>
+                <template is="wxParse" data="{{wxParseData:article.nodes}}"></template>
             </view>
-          </view>
+        <!-- <view class='fmoney '>
+        <text class='canyu '>5698参与</text> 
+        <button class='wx-btn buy' open-type='share'><text>分享给好友</text></button>
+        </view> -->
         </view>
-        <view wx:else>
-          <view class="no-info">
-            <icon color="#ccc" size="50" type="info"></icon>
-            暂无评论
-          </view>
+    <view class='mulu ' wx:if="{{btnIndex=='1'}}">1</view>
+    <view class='pinglun ' wx:if="{{btnIndex=='2'}}">
+        <view class="msg_list">
+        <view class="tt">最新评论</view>
+        <view class="lst">
+            <view wx:if="{{comments}}">
+            <view class="message-item" wx:for="{{comments}}" wx:for-index="i" wx:key="key">
+                <view class="message-box">
+                <view class="pic left" wx:if="{{item.head_pic}}">
+                    <image mode="widthFix" src="{{item.head_pic}}"></image>
+                </view>
+                <view class="pic left" wx:else>
+                    <image mode="widthFix" src="../../images/doumiao.png"></image>
+                </view>
+                <view class="info right">
+                    <view class="tit" wx:if="{{item.nickname}}">
+                    <view class="date right">
+                    <mystar class="star" stars="{{item.lesson_rank}}"></mystar>
+                    <text class="fa fa-clock-o"></text> {{item.add_time}}
+                    </view>
+                    </view>
+                    <text wx:if="{{item.content}}" class="txt">{{item.nickname}} : {{item.content}}</text>
+                </view>
+                <view class="clearBoth"></view>
+                </view>
+            </view>
+            </view>
+            <view wx:else>
+            <view class="no-info">
+                <icon color="#ccc" size="50" type="info"></icon>
+                暂无评论
+            </view>
+            </view>
         </view>
-      </view>
+        </view>
+        <view class="msg_bottom"></view>
+        <view class="msg_box">
+        <view class="voice" bindtap='record'>
+            <!-- <image src="../../images/icon_addvoice.png"></image> -->
+        </view>
+        <view class="remark" bindtap="remark">发评论</view>
+        </view>
     </view>
-    <view class="msg_bottom"></view>
-    <view class="msg_box">
-      <view class="voice" bindtap='record'>
-        <!-- <image src="../../images/icon_addvoice.png"></image> -->
-      </view>
-      <view class="remark" bindtap="remark">发评论</view>
+    <view class='kefu ' wx:if="{{btnIndex=='3'}}">3</view>
     </view>
 </view>
-<view class='kefu ' wx:if="{{btnIndex=='3'}}">3</view>
+<view class='share'>
+    <view class="shareBox">
+    <text class='shareBtn'>{{havBuySum}}人参与</text>
+  <button class='wx-btn  money' open-type='share'><text>分享给好友</text></button>
+  </view>
 </view>

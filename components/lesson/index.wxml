@@ -9,7 +9,7 @@
         </view>
         <view class="buy">
             <text class="" space="{{true}}" decode="{{true}}" wx:if="{{!item.order_id}}">{{item.score}} &nbsp;人已学习</text>
-            <text class="" space="{{true}}" decode="{{true}}">{{item.price}} ￥&nbsp;</text>
+            <text class="price" space="{{true}}" decode="{{true}}">￥&nbsp;{{item.price}}</text> 
             <text class="paystatus" data-detail="{{item}}"  catchtap='goPay' wx:if="{{item.order_id}}">{{item.pay_status ==1? '已付款':'去付款'}}</text>
         </view>
     </view>

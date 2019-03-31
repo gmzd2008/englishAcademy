@@ -28,6 +28,9 @@ Page({
     },
     myShare(){
         console.log(' myShare');
+        wx.navigateTo({
+            url: '/pages/share/index',
+        })
     },
   /**
    * 生命周期函数--监听页面初次渲染完成

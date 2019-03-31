@@ -1,9 +1,9 @@
-.courseBtn {
-    display: flex;
+.container{
+    padding-bottom: 200rpx;
 }
 
-.courseBtn .bgclor {
-    background: #0076ff;
+.courseBtn {
+    display: flex;
 }
 
 .courseBtn text {
@@ -16,7 +16,10 @@
     border: 1px solid #0076ff;
     font-size: 32rpx;
 }
-
+.courseBtn text.bgclor {
+    color: #fff;
+    background: #0076ff;
+}
 .cont {
     /* display: flex; */
     width: 100%;
@@ -192,12 +195,18 @@
 }
 
 .share {
+    position: fixed;
+    bottom: 0;
+    left:50%;
+    width: 712rpx;
+    margin-left: -356rpx;
+
+}
+.shareBox{
     display: flex;
     font-size: 34rpx;
-    width: 712rpx;
-    margin: 60rpx auto 10rpx;
+    background-color: #fff;
 }
-
 .share .shareBtn {
     display: inline-block;
     background: #259b24;

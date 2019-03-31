@@ -57,7 +57,7 @@
             <text>{{lesson.lesson_addr}}</text>
         </view>
         <view class="tips">
-            <text>已有112人占位</text>
+            <text>已有{{lesson.havBuySum}}人占位</text>
         </view>
         <view class='zhanweiPeople'>
             <text class='usrName' style='border-right:1px solid #BBBBBB;'>姓名</text>
@@ -70,11 +70,13 @@
             </view>
         </view>
         <view class='share'>
-            <button class='shareBtn' open-type='share'>分享</button>
-            <view catchtap='pay' class='money'>
-                <text>￥</text>
-                <text>{{lesson.price}}</text>
-                <text>/立即购买</text>
+            <view class='shareBox'>
+                <button class='shareBtn' open-type='share'>分享</button>
+                <view catchtap='pay' class='money'>
+                    <text>￥</text>
+                    <text>{{lesson.price}}</text>
+                    <text>/立即购买</text>
+                </view>
             </view>
         </view>
     </view>

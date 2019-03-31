@@ -1,5 +1,4 @@
 import {
-    base_url,
     host_url
 } from "../../utils/config.js";
 import {HTTP} from "../../utils/http-promise.js";

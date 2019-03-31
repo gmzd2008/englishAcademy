@@ -1,5 +1,4 @@
 import {
-    base_url,
     host_url
 } from "../../utils/config.js";
 import {
@@ -15,17 +14,19 @@ import {
 } from "../../utils/order-model.js";
 let http = new HTTP;
 let order = new Order();
+var wxParse = require("../../utils/wxParse/wxParse.js");
 Page({
 
     /**
      * 页面的初始数据
      */
     data: {
-        btnIndex: "1",
+        btnIndex: "0",
         lesson: [],
         comments:[],
         orderStatus: 0,
-        orderId: ""
+        orderId: "",
+        havBuySum:0
     },
     pay() {
         let id = this.data.lesson.id;
@@ -110,6 +111,8 @@ Page({
         }).then(data => {
             data.poster = host_url + data.poster
             data.list_img = host_url + data.list_img
+            data.content = decodeURI(data.content.replace('/Public/upload/', host_url +'/Public/upload/'));
+            wxParse.wxParse("article", "html", data.content, that, 5);
             console.log(data);
             that.setData({
                 lesson: data
@@ -133,8 +136,12 @@ Page({
     onLoad: function(opt) {
         console.log(opt)
         // opt = opt.hasOwnProperty('id') ? opt : {
-        //     id: 2
+        //     id: 2,
+        //     havBuySum:5
         // };
+        this.setData({
+            havBuySum: opt.havBuySum
+        });
         this.getOneLessCom(opt.id);
     },
 

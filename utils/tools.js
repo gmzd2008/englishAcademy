@@ -1,5 +1,4 @@
 import {
-    base_url,
     host_url
 } from "./config.js";
 import {
@@ -29,9 +28,7 @@ let login = function(that){
                     wx.setStorageSync('userStatus', userStatus);
                     switch (userStatus){
                         case '10000':
-                        toast("已经老用户",()=>{
                             jump('/pages/index/index', 2);
-                        });
                         break;
                         case '10001':
                             toast("未绑定手机号");
@@ -95,6 +92,14 @@ let updateUser = function(that,cb) {
         }
     })
 }
+let getSmsCode = (phone,cb)=>{
+    http.request({
+        url:`/index.php/api/sms/getSmsCode?phone=${phone}`
+    }).then(data => {
+        typeof cb == 'function' && cb(data);
+        console.log("用户信息保存成功！");
+    });
+}
 // 跳转
 let jump= function(url, type = 1) {
     if (type == 1) {
@@ -142,4 +147,21 @@ let cnsub = function (str, n) {
     }
     return str;
 }
-export { jump,toast,login,updateUser,cnsub}
+/**
+ * 将wx的callback形式的API转换成支持Promise的形式
+ */
+let promisify = api => {
+    return (options, ...params) => {
+        return new Promise((resolve, reject) => {
+            const extras = {
+                success: resolve,
+                fail: reject
+            }
+            api({
+                ...options,
+                ...extras
+            }, ...params)
+        })
+    }
+}
+export { promisify, jump, toast, login, updateUser,getSmsCode,cnsub}

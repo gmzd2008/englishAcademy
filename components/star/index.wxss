@@ -10,6 +10,6 @@
 }
 .stars-container image{
   padding-left: 4rpx;
-  height: 18rpx;
-  width: 18rpx;
+  height: 30rpx;
+  width: 30rpx;
 }

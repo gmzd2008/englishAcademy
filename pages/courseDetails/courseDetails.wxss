@@ -1,3 +1,6 @@
+.container{
+    padding-bottom: 200rpx;
+}
 .imgeW {
     width: 100%;
     height: 400rpx;
@@ -50,6 +53,9 @@
 }
 
 .fmoney {
+    display: fixed;
+    bottom: 0;
+    left: 0;
     width: 750rpx;
     height: 90rpx;
     font-size: 16px;
@@ -71,6 +77,43 @@
     line-height: 90rpx;
     font-size: 16px;
     margin-left: 30rpx;
+}
+
+.share {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    margin-left: -354rpx;
+    width: 712rpx;
+}
+
+.shareBox {
+    display: flex;
+    font-size: 34rpx;
+    background-color: #fff;
+}
+
+.share .shareBtn {
+    display: inline-block;
+    background: #259b24;
+    color: #fff;
+    width: 156rpx;
+    height: 80rpx;
+    line-height: 80rpx;
+    text-align: center;
+    border-radius: 0;
+}
+
+.money {
+    display: inline-block;
+    width: 550rpx;
+    height: 80rpx;
+    line-height: 80rpx;
+    background: #ff9800;
+    text-align: center;
+    color: #fff;
+    padding-left: 6rpx;
+    border-radius: 0;
 }
 
 /**
@@ -110,6 +153,7 @@
     font-size: 12px;
     color: #999;
     line-height: 22px;
+    word-break: break-all;
 }
 
 .msg_list .date {
@@ -118,6 +162,10 @@
     font-size: 12px;
     color: #999;
     line-height: 22px;
+}
+
+.msg_list .date .star {
+    padding-top: 10rpx;
 }
 
 .msg_list .message-box {

@@ -1,6 +1,5 @@
 // pages/index/index.js
 import {
-    base_url,
     host_url
 } from "../../utils/config.js";
 import {

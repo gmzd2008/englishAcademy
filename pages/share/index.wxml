@@ -1,0 +1,21 @@
+<view class="pic">
+  <!-- <image bindtap="showPic" mode="widthFix" src="{{pic}}"></image> -->
+<canvas bindtap='saveImage' class='shareCanvas' canvas-id="shareCanvas" data-id="shareCanvas" ></canvas>
+  <image bindtap="showPic" mode="widthFix" wx:if="{{canv}}" src="{{canv}}"></image>
+</view>
+<view class="txt">
+  点击预览大图，长按大图发送好友，或保存图片。
+</view>
+<view class="bottom">
+  <view class="box">
+    <!-- <view class="pic-list">
+      <image mode='widthFix' bindtap="setPic" data-index="0" src="https://xuedou.ybb18.com/weapp/share/index.php?openid={openid}&index=0"></image>
+      <image mode='widthFix' bindtap="setPic" data-index="1" src="https://xuedou.ybb18.com/weapp/share/index.php?openid={openid}&index=1"></image>
+      <image mode='widthFix' bindtap="setPic" data-index="2" src="https://xuedou.ybb18.com/weapp/share/index.php?openid={openid}&index=2"></image>
+      <image mode='widthFix' bindtap="setPic" data-index="3" src="https://xuedou.ybb18.com/weapp/share/index.php?openid={openid}&index=3"></image>
+      <image mode='widthFix' bindtap="setPic" data-index="4" src="https://xuedou.ybb18.com/weapp/share/index.php?openid={openid}&index=4"></image>
+      <image mode='widthFix' bindtap="setPic" data-index="5" src="https://xuedou.ybb18.com/weapp/share/index.php?openid={openid}&index=5"></image>
+    </view> -->
+    <button data-name="shareBtn" openType="share" type="primary">分享好友</button>
+  </view>
+</view>
