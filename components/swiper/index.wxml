@@ -3,7 +3,7 @@
     <swiper class="swiper-box" indicator-dots="{{option.indicatorDots}}" vertical="{{option.vertical}}" autoplay="{{option.autoplay}}" duration="{{option.duration}}" interval='{{option.interval}}' bindchange="bindchange" circular="{{option.circular}}" style="height:{{option.imgheights[option.current]}}rpx;">
         <block wx:for='{{imgs}}' wx:key="{{index}}">
             <swiper-item>
-                <image src="{{item.src}}" data-link="{{item.href}}" data-id='{{index}}' class="slide-image" mode="widthFix" bindload="imageLoad" style='width:100%' />
+                <image src="{{item.src}}" data-link="{{item.href}}" data-id='{{index}}' class="slide-image" mode="widthFix" bindload="imageLoad" bindtap="navTo" data-detail="{{item}}" style='width:100%' />
             </swiper-item>
         </block>
     </swiper>

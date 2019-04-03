@@ -51,6 +51,12 @@ Page({
         // };
         this.getOneLesson(opt.id);
     },
+    makePhoneCall(e) {
+        let phone = e.currentTarget.dataset.phone;
+        wx.makePhoneCall({
+            phoneNumber: phone //仅为示例，并非真实的电话号码
+        })
+    },
     pay() {
         let id = this.data.lesson.id;
         let openid = wx.getStorageSync('openid');
@@ -169,30 +175,23 @@ Page({
     },
     clock(endTime) {
         var today = new Date(), //当前时间
-            h = today.getHours(),
-            m = today.getMinutes(),
-            s = today.getSeconds();
-        var stopTime = new Date(endTime), //结束时间
-            stopH = stopTime.getHours(),
-            stopM = stopTime.getMinutes(),
-            stopS = stopTime.getSeconds();
-        var shenyu = stopTime.getTime() - today.getTime(), //倒计时毫秒数
-            shengyuD = parseInt(shenyu / (60 * 60 * 24 * 1000)), //转换为天
-            D = parseInt(shenyu) - parseInt(shengyuD * 60 * 60 * 24 * 1000), //除去天的毫秒数
-            shengyuH = parseInt(D / (60 * 60 * 1000)), //除去天的毫秒数转换成小时
-            H = D - shengyuH * 60 * 60 * 1000, //除去天、小时的毫秒数
-            shengyuM = parseInt(H / (60 * 1000)), //除去天的毫秒数转换成分钟
-            M = H - shengyuM * 60 * 1000, //除去天、小时、分的毫秒数
-            S = parseInt((shenyu - shengyuD * 60 * 60 * 24 * 1000 - shengyuH * 60 * 60 * 1000 - shengyuM * 60 * 1000) / 1000); //除去天、小时、分的毫秒数转化为秒
-        shengyuD = shengyuD > 10 ? shengyuD : "0" + shengyuD
-        shengyuH = shengyuH > 10 ? shengyuH : "0" + shengyuH
-        shengyuM = shengyuM > 10 ? shengyuM : "0" + shengyuM
-        S = S > 10 ? S : "0" + S
-        let timer = {
+            stopTime = new Date(endTime), //结束时间
+            syTime = ((stopTime.getTime() - today.getTime()) / 1000),  //剩余的秒数
+            shengyuD = parseInt(syTime / (24 * 3600)),
+            syTime1 = syTime % (24 * 3600),
+            shengyuH = parseInt(syTime1 / 3600),
+            syTime2 = syTime1 % 3600,
+            shengyuM = parseInt(syTime2 / 60),
+            S = parseInt(syTime2 % 60);
+        shengyuD = shengyuD >= 10 ? shengyuD : "0" + shengyuD
+        shengyuH = shengyuH >= 10 ? shengyuH : "0" + shengyuH
+        shengyuM = shengyuM >= 10 ? shengyuM : "0" + shengyuM
+        S = S >=10 ? S : "0" + S
+        var timer = {
             D: shengyuD,
             H: shengyuH,
-            M: shengyuH,
-            S
+            M: shengyuM,
+            S: S
         }
         this.setData({
             timer: timer

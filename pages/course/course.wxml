@@ -9,7 +9,7 @@
             <text class=''>{{lesson.title}}</text>
         </view>
         <view class='jianjie'>
-            <image src="{{lesson.lecturer.picture}}" mode='widthFix'></image>
+            <image src="{{lesson.lecturer.picture}}" mode='scaleToFill'></image>
             <view class='jianjieR'>
                 <text>{{lesson.lecturer.tit}}：{{lesson.lecturer.name}}</text>
                 <view class='rBottom'>
@@ -36,21 +36,22 @@
         <view class="countdown">
             <text class='countdowntxt' style='color:#E51C23'>距离课程开始时间还有</text>
             <view class='xnumber'>
-                <text decode="{{true}}" space="{{true}}">{{timer.D}}&nbsp;&nbsp;&nbsp;</text>
-                <text decode="{{true}}" space="{{true}}">{{timer.H}}:&nbsp;&nbsp;&nbsp;</text>
-                <text decode="{{true}}" space="{{true}}">{{timer.M}}:&nbsp;&nbsp;&nbsp;</text>
-                <text>{{timer.S}}</text>
+                <text decode="{{true}}" space="{{true}}">{{timer.D}}&nbsp;天&nbsp;</text>
+                <text decode="{{true}}" space="{{true}}">{{timer.H}}&nbsp;时&nbsp;</text>
+                <text decode="{{true}}" space="{{true}}">&nbsp;{{timer.M}}&nbsp;分&nbsp;</text>
+                <text decode="{{true}}" space="{{true}}">&nbsp;{{timer.S}}&nbsp;秒&nbsp;</text>
             </view>
-            <view class='xtxt'>
-                <text decode="{{true}}" space="{{true}}">天&nbsp;&nbsp;&nbsp;&nbsp;</text>
-                <text decode="{{true}}" space="{{true}}">时&nbsp;&nbsp;&nbsp;&nbsp;</text>
-                <text decode="{{true}}" space="{{true}}">分&nbsp;&nbsp;&nbsp;&nbsp;</text>
-                <text>秒</text>
-            </view>
+            <!-- <view class='xtxt'>
+                <text decode="{{true}}" space="{{true}}">&nbsp;&nbsp;&nbsp;&nbsp;</text>
+                <text decode="{{true}}" space="{{true}}">&nbsp;&nbsp;&nbsp;&nbsp;</text>
+                <text decode="{{true}}" space="{{true}}">&nbsp;&nbsp;&nbsp;&nbsp;</text>
+                <text></text>
+            </view> -->
         </view>
         <view class='telphone'>
             <text>联系方式：</text>
             <text>{{lesson.mobile}}</text>
+            <text class="callPhone" catchtap='makePhoneCall' data-phone="{{lesson.mobile}}" decode="{{true}}" space="{{true}}"> &nbsp;&nbsp; 一键拨号</text>
         </view>
         <view class='adress'>
             <text>听课地址：</text>

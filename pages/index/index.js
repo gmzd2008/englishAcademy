@@ -28,6 +28,16 @@ Page({
         lessonL: [],
         lessonR: []
     },
+    onNavTo(e){
+        console.log(e)
+        let detail = null;
+        if (e.type == 'navTo') {
+            detail = e.detail;
+            wx.navigateTo({
+                url: `/pages/course/course?id=${detail.ad_link}`
+            })
+        }
+    },
     onMyNav(e) {
         console.log(e)
         let detail = e.currentTarget.dataset.detail;

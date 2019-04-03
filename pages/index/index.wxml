@@ -5,7 +5,7 @@
     搜索你想看的课程哦 
   </navigator>
 </view>
-<swiper-cmp imgs="{{swiper}}"></swiper-cmp>
+<swiper-cmp imgs="{{swiper}}" bindnavTo="onNavTo"></swiper-cmp>
 <view class="container new-user">
   <image class="" src="/images/call.png" mode="widthFix" lazy-load="false" binderror="" bindload=""></image>
   <view bindtap="toRegister">新人注册专享35元大礼包，你来我就送！</view>

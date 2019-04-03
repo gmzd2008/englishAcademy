@@ -67,6 +67,11 @@ Component({
     },
     bindchange: function (e) {
       this.setData({ ['option.current']: e.detail.current })
+    },
+      navTo(e){
+        console.log(e);
+          let detail = e.currentTarget.dataset.detail;
+          this.triggerEvent("navTo", detail);
     }
   }
 })

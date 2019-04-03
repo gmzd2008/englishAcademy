@@ -43,21 +43,19 @@
 .jianjie {
     height: 310rpx;
     display: flex;
-    margin-left: 22rpx;
     overflow: hidden;
 }
 
 .jianjie > image {
-    width: 160rpx;
+    width: 220rpx;
     height: 280rpx;
     border: 1px solid red;
     margin-top: 20rpx;
-    margin-left:30rpx;
 }
 
 .jianjieR {
-    width: 450rpx;
-    margin-left: 58rpx;
+    width: 476rpx;
+    margin-left: 33rpx;
     margin-top: 32rpx;
     font-size: 30rpx;
 }
@@ -78,7 +76,6 @@
 
 .peopleNumber {
     display: flex;
-    width: 708rpx;
     border: 1px solid #ccc;
     margin: 0 auto;
     border-radius: 2px;
@@ -106,22 +103,23 @@
 
 .countdown {
     font-size: 28rpx;
-    padding-top: 36rpx;
+    padding: 36rpx 0;
 }
 
 .countdown .countdowntxt {
     display: inline-block;
     width: 100%;
     text-align: center;
-    margin-bottom: 20rpx;
+    margin-bottom: 10rpx;
 }
 
 .xnumber {
-    width: 252rpx;
+    width: 100%;
     height: 52rpx;
     line-height: 52rpx;
     text-align: center;
     margin: 0 auto;
+    color:#ff7715;
 }
 
 .xtxt {
@@ -142,7 +140,9 @@
     border-top: 1px solid #bbb;
     border-bottom: 1px solid #bbb;
 }
-
+.telphone .callPhone{
+    color:#ff7715;
+}
 .adress {
     color: #333;
     font-size: 28rpx;
