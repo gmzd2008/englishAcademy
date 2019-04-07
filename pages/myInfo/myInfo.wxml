@@ -19,22 +19,6 @@
     </view>
     <view class="lst">
         <view class="left">
-            性别
-        </view>
-        <view class="right">
-            <view class="input left">
-                <picker bindchange="selectSex" range="{{sexArray}}" value="{{sexChk}}">
-                    <view>
-                        {{sexArray[sex]}}
-                    </view>
-                </picker>
-            </view>
-            <text class="fa fa-chevron-right"></text>
-        </view>
-        <view class="clearBoth"></view>
-    </view>
-    <view class="lst">
-        <view class="left">
             真实姓名
         </view>
         <view class="right">
@@ -49,6 +33,78 @@
         </view>
         <view class="right">
             <input type="number" bindinput="inputMobile" class="input left"  value="{{mobile}}" maxlength="11"></input>
+            <text class="fa fa-chevron-right"></text>
+        </view>
+        <view class="clearBoth"></view>
+    </view>
+    <view class="lst">
+        <view class="left">
+            孩子中文姓名
+        </view>
+        <view class="right">
+            <input bindinput="inputChild_name1" class="input left" maxlength="8" placeholder="孩子中文名" value="{{child_name1}}"></input>
+            <text class="fa fa-chevron-right"></text>
+        </view>
+        <view class="clearBoth"></view>
+    </view>
+    <view class="lst">
+        <view class="left">
+            孩子中文姓名
+        </view>
+        <view class="right">
+            <input bindinput="inputChild_name2" class="input left" maxlength="8" placeholder="孩子英文名" value="{{child_name2}}"></input>
+            <text class="fa fa-chevron-right"></text>
+        </view>
+        <view class="clearBoth"></view>
+    </view>
+    <view class="lst">
+        <view class="left">
+            孩子生日
+        </view>
+        <view class="right">
+            <view class="input">
+                <picker mode="date" bindchange="selectchild_birthday" start="2000-01-01" end="2030-01-01">
+                    <view>
+                        {{child_birthday}}
+                    </view>
+                </picker>
+            </view>
+            <text class="fa fa-chevron-right"></text>
+        </view>
+        <view class="clearBoth"></view>
+    </view>
+    <view class="lst">
+        <view class="left">
+            孩子学校名
+        </view>
+        <view class="right">
+            <input bindinput="inputChild_school" class="input left" maxlength="8" placeholder="孩子英文名" value="{{child_school}}"></input>
+            <text class="fa fa-chevron-right"></text>
+        </view>
+        <view class="clearBoth"></view>
+    </view>
+    <view class="lst">
+        <view class="left">
+            孩子手机号
+        </view>
+        <view class="right">
+            <input type="number" bindinput="inputChildConcat" class="input left"  value="{{child_concat}}" maxlength="11"></input>
+            <text class="fa fa-chevron-right"></text>
+        </view>
+        <view class="clearBoth"></view>
+    </view>
+    <view class="lst">
+        <view class="left">
+            孩子性别
+        </view>
+        <view class="right">
+            <view class="input left">
+                <picker bindchange="selectchildSex" range="{{childSexArray}}" value="{{childSex}}">
+                    <view>
+                        {{childSexArray[childSex]}}
+                    </view>
+                </picker>
+            </view>
             <text class="fa fa-chevron-right"></text>
         </view>
         <view class="clearBoth"></view>

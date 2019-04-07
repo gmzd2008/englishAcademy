@@ -11,10 +11,15 @@ Page({
         head_pic: "",
         nickname: "",
         flag: !0,
-        sexArray: ["选择", "男", "女"],
-        sex: 0,
+        childSexArray: ["选择", "男", "女"],
+        childSex: 0,
         name: "",
         mobile: "",
+        child_name1: "",
+        child_name2: "",
+        child_birthday: "",
+        child_school: "",
+        child_concat:"",
         qq: "",
         sendPhoneFlag: "",
         sendFlag: "",
@@ -42,9 +47,14 @@ Page({
             that.setData({
                 head_pic:data.head_pic,
                 nickname: data.nickname,
-                sex:data.sex,
                 name:data.name,
                 mobile:data.mobile,
+                child_name1: data.child_name1,
+                child_name2: data.child_name2,
+                child_birthday: data.child_birthday,
+                child_school: data.child_school,
+                child_concat: data.child_concat,
+                childSex:data.child_sex,
                 qq:data.qq
 
             })
@@ -52,10 +62,17 @@ Page({
     },
     onReady: function () { },
     onShareAppMessage: function () { },
-    selectSex: function (e) {
+    selectchildSex: function (e) {
         var t = this, a = e.detail.value;
         t.setData({
-            sex: a
+            childSex: a
+        });
+    },
+    selectchild_birthday(e){
+        var t = this, a = e.detail.value;
+        console.log(a);
+        t.setData({
+            child_birthday: a
         });
     },
     inputUserName: function (e) {
@@ -72,6 +89,36 @@ Page({
         }
         this.setData({
             mobile: m
+        });
+    },
+    inputChild_name1: function (e) {
+        var t = this, a = e.detail.value;
+        "" != a && t.setData({
+            child_name1: a
+        });
+    },
+    inputChild_name2: function (e) {
+        var t = this, a = e.detail.value;
+        "" != a && t.setData({
+            child_name2: a
+        });
+    },
+    inputChild_school: function (e) {
+        var t = this, a = e.detail.value;
+        "" != a && t.setData({
+            child_school: a
+        });
+    },
+    inputChildConcat(e){
+        let m = e.detail.value;
+        let reg = /^1[3|5|6|7|8|9]\d{9}$/
+        if (!reg.test(m)) {
+            return wx.showToast({
+                title: '输入正确手机号',
+            });
+        }
+        this.setData({
+            child_concat: m
         });
     },
     checkMobile: function (m) {
@@ -211,9 +258,14 @@ Page({
                 data: {
                     openid: openid,
                     name: that.data.name,
-                    sex: that.data.sex,
+                    mobile: that.data.mobile,
+                    child_name1: that.data.child_name1,
+                    child_name2: that.data.child_name2,
+                    child_birthday: that.data.child_birthday,
+                    child_school: that.data.child_school,
+                    child_concat: that.data.child_concat,
+                    childSex: that.data.child_sex,
                     qq:that.data.qq,
-                    mobile: that.data.mobile
                 }
             }).then(data=>{
                 wx.showToast({
