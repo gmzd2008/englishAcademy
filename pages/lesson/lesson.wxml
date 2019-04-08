@@ -1,6 +1,6 @@
 <!-- pages/lesson/lesson.wxml -->
 <view class="header">
-    <icon class="search" type="search" size="28" color='#fff'></icon>
+    <!-- <icon class="search" type="search" size="28" color='#fff'></icon> -->
     <navigator class="header-search" open-type="navigate" url="/pages/search/search">
         搜索你想看的课程哦
     </navigator>
@@ -18,5 +18,9 @@
     <block wx:for="{{lesson}}" wx:key="id">
         <lesson-cmp item="{{item}}" bindmyEvent="onMyEvent"></lesson-cmp>
     </block>
+  <view class='none' wx:if="{{noData}}">
+    <image class="no-data" src="/images/no-data.png" mode="widthFix"></image>
+    <view class="none-tips">~暂无数据~</view>
+  </view>
     <view class='no-more' wx:if="{{noMore}}">没有更多了！</view>
 </view>

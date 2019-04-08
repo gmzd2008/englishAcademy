@@ -25,9 +25,13 @@ Component({
             //console.log(e);
             // let detail = e.currentTarget.dataset.detail;
             // this.triggerEvent("myEvent",detail);
+            this.triggerEvent("canceEvent");
             wx.switchTab({
                 url: '/pages/index/index',
             })
+        },
+        confirm(){
+            this.triggerEvent("confirmEvent");
         }
     }
 })

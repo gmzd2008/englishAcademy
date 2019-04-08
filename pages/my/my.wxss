@@ -1,62 +1,93 @@
 /* pages/my/my.wxss */
-.userAvatar{
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  padding-bottom: 104rpx;
-  padding-top: 104rpx;
+
+.userAvatar {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    padding: 60rpx 0;
 }
-.line{
-  height: 10rpx;
-  background: #eee
+
+.line {
+    height: 10rpx;
+    background: #eee;
 }
+
 .userAvatar .userinfo-avatar {
-  width: 180rpx;
-  margin: 0 auto;
-
-}
-.userNick{
-  width: 100%;
-  font-size: 30rpx;
-  display: flex;
-  justify-content: center;
-}
-.userNick image{
-  margin-left:30rpx;
-  width: 30rpx;
+    width: 180rpx;
+    margin: 0 auto;
+    overflow: hidden;
 }
 
-.kec-list{
+.userNick {
+    position: relative;
+    top:0;
+    left:50%;
+    transform: translate(-50%,0);
+    margin-top:10rpx;
+    width: 180rpx;
+    font-size: 30rpx;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.userNick image {
+    margin-left: 30rpx;
+    width: 30rpx;
+}
+.userNick >view{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    text-align: center;
+    margin-top:10rpx;
+    color:#ff7715;
+}
+.userNick >view icon{
+    position: relative;
+    top:8rpx;
+    left:0;
+    padding-right:6rpx;
+    
+}
+
+.kec-list {
     width: 100%;
 }
-.kec-list > view{
-  padding:0 26rpx;
-  display: flex;
-   flex-direction: row;
-   justify-content: space-between;
-   align-items: center;
-   font-size: 30rpx;
-   color: #101010;
-   border-bottom: 1px solid #eee;
-   padding-top: 40rpx;
-   padding-bottom: 40rpx;
+
+.kec-list > view {
+    padding: 0 26rpx;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 30rpx;
+    color: #101010;
+    border-bottom: 1px solid #eee;
+    padding-top: 40rpx;
+    padding-bottom: 40rpx;
 }
-.kec-list >view > image{
-  width: 20rpx;
-  vertical-align: middle;
+
+.kec-list >view > image {
+    width: 20rpx;
+    vertical-align: middle;
 }
+
 .item {
     position: relative;
 }
-.kec-list .list-left image{
-  width: 40rpx;
-  vertical-align: middle;
+
+.kec-list .list-left image {
+    width: 40rpx;
+    vertical-align: middle;
 }
-.kec-list > view text{
-margin-left: 20rpx;
-font-size: 30rpx;
+
+.kec-list > view text {
+    margin-left: 20rpx;
+    font-size: 30rpx;
 }
-.kec-list1{
-padding-bottom: 200rpx;
+
+.kec-list1 {
+    padding-bottom: 200rpx;
 }

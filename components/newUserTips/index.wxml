@@ -6,7 +6,7 @@
   <view>联系客服，发送你的个人秀吧！</view>
   <view class='contact'>
   <button class='wx-btn' catchtap='onTap'>取消</button>
-  <button class='wx-btn' open-type='contact'>确定</button>
+  <button class='wx-btn' catchtap="confirm" open-type='contact'>确定</button>
   </view>
   </view>
 </view>

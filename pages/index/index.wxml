@@ -1,6 +1,6 @@
 <!-- pages/index/index.wxml -->
 <view class="header">
-  <icon class="search" type="search" size="28" color='#fff'></icon>
+  <!-- <icon class="search" type="search" size="28" color='#fff'></icon> -->
   <navigator class="header-search" open-type="navigate" url="/pages/search/search">
     搜索你想看的课程哦 
   </navigator>

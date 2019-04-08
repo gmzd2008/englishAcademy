@@ -10,7 +10,7 @@
     </view>
     <view class="lst">
         <view class="left">
-            昵称
+            家长昵称
         </view>
         <view class="right">
             {{nickname}}
@@ -19,7 +19,7 @@
     </view>
     <view class="lst">
         <view class="left">
-            真实姓名
+            家长姓名
         </view>
         <view class="right">
             <input bindinput="inputUserName" class="input left" maxlength="8" placeholder="" value="{{name}}"></input>

@@ -3,10 +3,17 @@
 <view class="container">
     <view class="userAvatar">
         <view class="userinfo-avatar">
-            <open-data type="userAvatarUrl"></open-data>
+            <open-data class="avatar" type="userAvatarUrl"></open-data>
         </view>
         <view class="userNick">
             <open-data type="userNickName" class="aick"></open-data>
+            <view>
+            <icon type="warn" size='14'></icon>
+                <view wx:if="{{userStatus=='10000'}}"> 已审核</view>
+                <view catchtap="checkAuth" wx:if="{{userStatus=='10003'}}"> 未审核</view>
+                <view catchtap="checkAuth" wx:if="{{userStatus=='10002' || userStatus=='10001'}}"> 未注册</view>
+            </view>
+
         </view>
     </view>
     <view class="line"></view>
@@ -20,7 +27,7 @@
         </view>
         <view catchtap='profile'>
 
-            <view class="list-left" >
+            <view class="list-left">
                 <image src="/images/user1Chk.png" mode="widthFix"></image>
                 <text>个人资料</text>
             </view>
@@ -47,7 +54,7 @@
         </view>
         <view class="item">
             <view class="list-left">
-            <button class="kf_btn" open-type="contact"></button>
+                <button class="kf_btn" open-type="contact"></button>
                 <image src="/images/talk.png" mode="widthFix"></image>
                 <text>联系客服</text>
             </view>
@@ -56,3 +63,4 @@
         </view>
     </view>
 </view>
+<new-user-tips wx:if="{{tip}}" bindconfirmEvent="confirmEvent" bindcanceEvent="confirmEvent"></new-user-tips>

@@ -2,7 +2,7 @@
 
 .header {
     width: 100%;
-    height: 90rpx;
+    height: 68rpx;
     padding: 6rpx 10rpx;
     display: flex;
     justify-content: flex-start;
@@ -16,9 +16,10 @@
 }
 
 .header-search {
-    width: 600rpx;
-    height: 78rpx;
-    line-height: 78rpx;
+    margin: 0 auto;
+    width: 680rpx;
+    height: 68rpx;
+    line-height: 68rpx;
     border-radius: 39rpx;
     border: 1px soid #D8151F;
     background: #D8151F;
@@ -52,6 +53,20 @@
     right: 0;
     bottom: 0;
     z-index: 10;
+}
+.none{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.no-data{
+  margin-top: 300rpx;
+  width: 200rpx;
+}
+.none-tips{
+  margin-top: 30rpx;
+  font-size: 32rpx;
+  color: #c7c7c7;
 }
 .no-more{
     margin:20rpx 0;

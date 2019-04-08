@@ -17,7 +17,8 @@ Page({
         lessCats: [],
         scrollIndex: "0",
         lesson: [],
-        noMore: false
+        noMore: false,
+        noData:false
     },
 
     /**
@@ -45,8 +46,13 @@ Page({
                 item.remark = cnsub(item.lesson_remark,66)
                 item.list_img = host_url + item.list_img;
             });
+            let noData = false;
+            if (data.length == 0) {
+                noData = true;
+            }
             this.setData({
-                lesson: data
+                lesson: data,
+                noData: noData
             })
         })
     },

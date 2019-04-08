@@ -1,4 +1,6 @@
 {
-  "usingComponents": {},
+  "usingComponents": {
+        "new-user-tips": "/components/newUserTips/index"
+  },
   "navigationBarTitleText": "我的"
 }

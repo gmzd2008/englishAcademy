@@ -37,9 +37,7 @@ let login = function(that){
                             toast("未绑定手机号");
                             break;
                         case '10003':
-                            toast("待审核用户", () => {
-                                jump('/pages/index/index', 2);
-                            });
+                            toast("待审核用户");
                             break;
                         default:
                     }

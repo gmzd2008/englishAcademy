@@ -180,6 +180,11 @@ Page({
             })
         });
     },
+    toggleTip() {
+        this.setData({
+            tip: false
+        });
+    },
     showDialog: function() {
         this.dialog.showDialog();
     },
